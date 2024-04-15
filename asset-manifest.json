@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/repair-tent/static/css/main.2596fb18.css",
-    "main.js": "/repair-tent/static/js/main.c44346ce.js",
+    "main.js": "/repair-tent/static/js/main.15db4a49.js",
     "static/media/hero-image.jpg": "/repair-tent/static/media/hero-image.d872513b0b5273195deb.jpg",
     "static/media/Ellipse 12.png": "/repair-tent/static/media/Ellipse 12.9ee000beb5707fbe65eb.png",
     "static/media/Ellipse 18.png": "/repair-tent/static/media/Ellipse 18.4badca3795427caf6bc1.png",
@@ -21,10 +21,10 @@
     "static/media/es-flag.svg": "/repair-tent/static/media/es-flag.06064c6cc85d9bcb3e27.svg",
     "static/media/burger-menu.svg": "/repair-tent/static/media/burger-menu.8b9ec4e8449d17e2c21fddc5f4832ec2.svg",
     "main.2596fb18.css.map": "/repair-tent/static/css/main.2596fb18.css.map",
-    "main.c44346ce.js.map": "/repair-tent/static/js/main.c44346ce.js.map"
+    "main.15db4a49.js.map": "/repair-tent/static/js/main.15db4a49.js.map"
   },
   "entrypoints": [
     "static/css/main.2596fb18.css",
-    "static/js/main.c44346ce.js"
+    "static/js/main.15db4a49.js"
   ]
 }
