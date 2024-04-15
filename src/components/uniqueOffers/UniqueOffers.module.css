@@ -1,0 +1,22 @@
+.section {
+  padding: 0px 33px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 1.37;
+  font-weight: bold;
+  letter-spacing: -0.3px;
+  color: rgba(241, 111, 78);
+  margin-bottom: 20px;
+}
+
+.styledTitle {
+  color: rgba(2, 129, 94);
+}
+
+.paginatedOffers {
+  display: flex;
+  gap: 30px;
+}

@@ -1,0 +1,31 @@
+.burgerMenu {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  height: 100%;
+  background-color: #fff;
+  padding: 10px 15px;
+  transition: transform 0.6s ease-in-out;
+  transform: translateX(100%);
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.burgerIcon {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  background-color: transparent;
+}
+
+.menuItems {
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuNavigate {
+}
