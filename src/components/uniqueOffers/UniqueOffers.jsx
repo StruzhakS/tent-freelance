@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import s from './UniqueOffers.module.css'
-
+import arrowRight from '../../images/arrowRight.svg';
+import arrowLeft from '../../images/arrowLeft.svg';
 const images = require.context('../../images', true);
 
 
@@ -18,42 +19,26 @@ const data = [
 const cardsPerPage = 3;
 
 const UniqueOffers = () => {
-     const [currentPage, setCurrentPage] = useState(1);
-  
-    const renderCards = () => {
-      const startIndex = (currentPage - 1) + cardsPerPage;
-      const endIndex = startIndex + cardsPerPage;
+  const [startIndex, setStartIndex] = useState(0)
 
-        console.log('startIndex', startIndex);
-        console.log('endIndex', endIndex);
-        
+    const renderCards = () => {
+      const endIndex = startIndex + cardsPerPage;
+       
       return data.slice(startIndex, endIndex).map((card, index) => (
         <div key={startIndex + index}>
-          <img src={images(`./${card.logo}`)} alt="Step Logo" />
+          <img src={images(`./${card.logo}`)}width={60} height={60} alt="Step Logo" />
           <h3>{card.title}</h3>
         </div>
       ));
     };
 
-    // Функція для перегляду попередньої картки
     const goToPrevCard = () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-      }
+      setStartIndex((prev)=>prev-1)
     };
 
-    // Функція для перегляду наступної картки
-    const goToNextCard = () => {
-      const totalCards = data.length;
-      const totalPages = Math.ceil(totalCards / cardsPerPage);
-
-      if (currentPage < totalPages) {
-        setCurrentPage(currentPage + 1);
-      }
+  const goToNextCard = () => {
+        setStartIndex(prev => prev + 1);
     };
-    
-
-    console.log(currentPage === data.length);
     
   return (
     <section className={s.section}>
@@ -61,21 +46,20 @@ const UniqueOffers = () => {
         УНИКАЛЬНЫЕ ПРЕДЛОЖЕНИЯ <br />
         <span className={s.styledTitle}>для вас</span>
       </h2>
-      <div>
-        <div>
-          {/* кнопки-стрілки для переходу до попередньої і наступної картки */}
-          <button onClick={goToPrevCard} disabled={currentPage === 1}>
-            &lt; Попередня
+        <div className={s.arrowWraper}>
+          <button className={s.arrowBtn} onClick={goToPrevCard} disabled={startIndex === 0}>
+            &larr;
           </button>
-          <button
+          <button className={s.arrowBtn}
             onClick={goToNextCard}
-            disabled={currentPage === data.length }
+            disabled={startIndex === data.length - cardsPerPage}
           >
-            Наступна &gt;
+         
+            &rarr;
           </button>
         </div>
         <div className={s.paginatedOffers}>{renderCards()}</div>
-      </div>
+     
     </section>
   );
 }
