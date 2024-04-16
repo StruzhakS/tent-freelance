@@ -6,8 +6,8 @@ import usedTent from '../../images/usedTent.png'
 const UsedTents = () => {
   return (
     <ul className={s.usedTentList}>
-      {usedTents.slice(0, 6).map(el => (
-        <li className={s.usedTentItem} key={el.title}>
+      {usedTents.slice(0, 6).map((el, i) => (
+        <li className={s.usedTentItem} key={el.title + i}>
               <img className={s.usedTentImage} src={el.img ? el.img : usedTent} alt={el.title} />
               <p className={s.tentTitle}>{el.title}</p>
               <p className={s.tentPrice}>{el.price} грн</p>

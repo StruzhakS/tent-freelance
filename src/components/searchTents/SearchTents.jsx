@@ -5,7 +5,7 @@ import search from '../../images/search.svg'
 const SearchTents = ({t}) => {
     return (
       <>
-        <div class={s.searchContainer}>
+        <div className={s.searchContainer}>
           <input
             type="text"
             className={s.searchInput}

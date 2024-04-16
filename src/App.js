@@ -20,6 +20,7 @@ import HomePage from 'pages/home/HomePage';
 import Header from 'components/header/Header';
 import { useState } from 'react';
 import BurgerMenu from 'components/burgerMenu/BurgerMenu';
+import Footer from 'components/footer/Footer';
 
 function App() {
   // const isAccessToken = useSelector(state => state.auth.accessToken);
@@ -53,6 +54,7 @@ function App() {
         </Route>
       )} */}
       </Routes>
+      <Footer/>
     </>
   );
 }
