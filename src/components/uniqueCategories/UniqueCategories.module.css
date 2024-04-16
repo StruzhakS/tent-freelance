@@ -1,0 +1,41 @@
+.section {
+  position: relative;
+  padding: 0px 33px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 1.37;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: -0.3px;
+  color: rgba(241, 111, 78);
+  margin-bottom: 20px;
+}
+
+.styledTitle {
+  color: rgba(2, 129, 94);
+}
+
+.paginatedOffers {
+  display: flex;
+  gap: 30px;
+}
+
+.arrowBtn {
+  background-color: transparent;
+  color: rgba(40, 111, 108, 1);
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.arrowBtn:disabled {
+  color: rgba(15, 49, 65, 1);
+}
+
+.arrowWraper {
+  position: absolute;
+  top: 84px;
+  right: 20px;
+}

@@ -1,41 +1,59 @@
 .section {
-  position: relative;
-  padding: 0px 33px;
-  text-align: center;
+  padding: 16px 33px;
 }
-
-.title {
-  font-size: 30px;
-  line-height: 1.37;
-  font-weight: bold;
-  text-align: left;
-  letter-spacing: -0.3px;
-  color: rgba(241, 111, 78);
-  margin-bottom: 20px;
-}
-
-.styledTitle {
-  color: rgba(2, 129, 94);
-}
-
-.paginatedOffers {
+.offersList {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 26px;
+  row-gap: 16px;
 }
 
-.arrowBtn {
-  background-color: transparent;
-  color: rgba(40, 111, 108, 1);
-  font-weight: 900;
-  font-size: 24px;
+.offerItem {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.arrowBtn:disabled {
-  color: rgba(15, 49, 65, 1);
+.offerImage {
+  margin-bottom: 16px;
+}
+.offerTitle {
+  text-align: center;
+  color: rgba(241, 111, 78, 0.8);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.72px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
 }
 
-.arrowWraper {
-  position: absolute;
-  top: 84px;
-  right: 20px;
+.offerSize {
+  font-size: 13px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -0.39px;
+}
+.offerPrice {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: rgba(255, 52, 0, 1);
+}
+
+.offerBuyBtn {
+  padding: 6px 18px;
+  border-radius: 15px;
+  background-color: rgba(2, 129, 94, 1);
+  color: white;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15.73px;
+  text-align: center;
+  cursor: pointer;
 }

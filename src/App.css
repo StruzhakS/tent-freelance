@@ -4,3 +4,33 @@
   margin: 0 auto;
   text-align: center;
 }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Стилі для контенту модального вікна */
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  /* max-width: 800px; */
+}
+
+/* Стилі для кнопки закриття */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 28px;
+  cursor: pointer;
+}

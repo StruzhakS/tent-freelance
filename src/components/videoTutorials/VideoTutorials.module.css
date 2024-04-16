@@ -1,0 +1,45 @@
+.section {
+  padding: 36px 33px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36.57px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: rgba(2, 129, 94, 1);
+}
+
+.styledTitle {
+  color: rgba(241, 117, 86, 1);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36.57px;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  background: rgba(240, 116, 84, 1);
+  color: white;
+  margin-left: auto;
+}
+
+.videoList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 20px;
+}
+.videoContainer {
+  border-radius: 16px;
+  overflow: hidden;
+}

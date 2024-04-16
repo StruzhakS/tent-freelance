@@ -1,64 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import s from './UniqueOffers.module.css'
-
-const images = require.context('../../images', true);
-
-
-const data = [
-  { title: 'Ремонт тента полуприцепа', logo: 'Ellipse 14.png' },
-  { title: 'Ремонт тента зерновоза', logo: 'Ellipse 15.png' },
-  { title: 'Ремонт тента легкового прицепа ', logo: 'Ellipse 16.png' },
-  { title: 'Ремонт тента газели', logo: 'Ellipse 17.png' },
-  { title: 'Ремонт тента-палатки', logo: 'Ellipse 18.png' },
-  { title: 'Ремонт верхушки тента', logo: 'Ellipse 19.png' },
-  { title: 'Таможенный ремонт по ТИР стандартам ', logo: 'Ellipse 13.png' },
-  { title: 'Тентовая фурнитура', logo: 'Ellipse 12.png' },
-  { title: 'Тентовый инструмент', logo: 'Ellipse 11.png' },
-];
-const cardsPerPage = 3;
+import { uniqueOffers } from 'constants/uniqueOffers'
+import latka from '../../images/Latka.png'
+import { useTranslation } from 'react-i18next'
 
 const UniqueOffers = () => {
-  const [startIndex, setStartIndex] = useState(0)
-
-    const renderCards = () => {
-      const endIndex = startIndex + cardsPerPage;
-       
-      return data.slice(startIndex, endIndex).map((card, index) => (
-        <div key={startIndex + index}>
-          <img src={images(`./${card.logo}`)}width={60} height={60} alt="Step Logo" />
-          <h3>{card.title}</h3>
-        </div>
-      ));
-    };
-
-    const goToPrevCard = () => {
-      setStartIndex((prev)=>prev-1)
-    };
-
-  const goToNextCard = () => {
-        setStartIndex(prev => prev + 1);
-    };
-    
+    const {t} = useTranslation()
   return (
     <section className={s.section}>
-      <h2 className={s.title}>
-        УНИКАЛЬНЫЕ ПРЕДЛОЖЕНИЯ <br />
-        <span className={s.styledTitle}>для вас</span>
-      </h2>
-        <div className={s.arrowWraper}>
-          <button className={s.arrowBtn} onClick={goToPrevCard} disabled={startIndex === 0}>
-            &larr;
-          </button>
-          <button className={s.arrowBtn}
-            onClick={goToNextCard}
-            disabled={startIndex === data.length - cardsPerPage}
-          >
-         
-            &rarr;
-          </button>
-        </div>
-        <div className={s.paginatedOffers}>{renderCards()}</div>
-     
+      <ul className={s.offersList}>
+        {uniqueOffers.slice(0, 4).map(el => (
+          <li key={el.id} className={s.offerItem}>
+            <img
+              className={s.offerImage}
+              src={el.img ? el.img : latka}
+              width={140}
+              height={110}
+              alt="latka"
+            />
+            <div className={s.description}>
+              <h3 className={s.offerTitle}>{el.title}</h3>
+              <p className={s.offerSize}>
+                1 {t('Patch')} - {el.size}
+              </p>
+            </div>
+            <p className={s.offerPrice}>{el.price}грн</p>
+            <button type="button" className={s.offerBuyBtn}>
+              {t('Order')}
+            </button>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
