@@ -1,13 +1,30 @@
-import React from 'react'
-import s from './VideoTutorials.module.css'
+import React from 'react';
+import s from './VideoTutorials.module.css';
 import { NavLink } from 'react-router-dom';
-import arrowRight from '../../images/moreVideoArrow.png'
+import arrowRight from '../../images/moreVideoArrow.png';
 import VideoList from './VideoList';
 
-
-const videoIds = ['0X6fZoFcZ6c', '0hGYJOyUJdw', '8U-sbSv1cbo', '11UgzJo4sO4']
+const videoIds = [
+  {
+    videoTitle: 'Ремонт тентов с выездом к заказчику',
+    videoId: '0X6fZoFcZ6c',
+  },
+  {
+    videoTitle: 'Ремонт автомобильных грузовых тентов с выездом к заказчику',
+    videoId: '0hGYJOyUJdw',
+  },
+  {
+    videoTitle: 'Ремонт тентов, замена крыши тента на газель',
+    videoId: '8U-sbSv1cbo',
+  },
+  {
+    videoTitle: 'Ремонт тентов грузовых автомобилей',
+    videoId: '11UgzJo4sO4',
+  }
+];
 
 const VideoTutorials = () => {
+ 
   return (
     <section className={s.section}>
       <h2 className={s.title}>
@@ -18,15 +35,14 @@ const VideoTutorials = () => {
         <img src={arrowRight} alt="link to videotutorials" />
       </NavLink>
       <ul className={s.videoList}>
-              {videoIds.map((el, idx) => 
-               (
+        {videoIds.slice(0, 4).map((el, idx) => (
           <li key={idx} className={s.videoContainer}>
-            <VideoList i={idx} videoId={el} />
+            <VideoList i={idx} videoId={el.videoId} title={el.videoTitle} />
           </li>
         ))}
       </ul>
     </section>
   );
-}
+};
 
-export default VideoTutorials
+export default VideoTutorials;

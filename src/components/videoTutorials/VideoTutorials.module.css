@@ -39,7 +39,23 @@
   column-gap: 10px;
   row-gap: 20px;
 }
-.videoContainer {
+
+.imageOfVideo {
+  width: 170px;
+  height: 120px;
   border-radius: 16px;
   overflow: hidden;
+  margin-bottom: 8px;
+}
+.videoContainer {
+  width: 170px;
+}
+
+.videoTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  color: rgba(241, 117, 86, 1);
+  text-transform: uppercase;
 }
