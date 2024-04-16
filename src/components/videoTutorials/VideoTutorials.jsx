@@ -36,7 +36,7 @@ const VideoTutorials = () => {
       </NavLink>
       <ul className={s.videoList}>
         {videoIds.slice(0, 4).map((el, idx) => (
-          <li key={idx} className={s.videoContainer}>
+          <li key={idx} className={s.videoItem}>
             <VideoList i={idx} videoId={el.videoId} title={el.videoTitle} />
           </li>
         ))}
