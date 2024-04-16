@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import s from './UniqueOffers.module.css'
-import arrowRight from '../../images/arrowRight.svg';
-import arrowLeft from '../../images/arrowLeft.svg';
+
 const images = require.context('../../images', true);
 
 
