@@ -1,0 +1,13 @@
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  display: inline-block;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  background: rgba(241, 117, 86, 1);
+  cursor: pointer;
+}
