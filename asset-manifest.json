@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/tent-freelance/static/css/main.244f38dd.css",
-    "main.js": "/tent-freelance/static/js/main.91600a98.js",
+    "main.css": "/tent-freelance/static/css/main.0e9b49ae.css",
+    "main.js": "/tent-freelance/static/js/main.49c9fda0.js",
+    "static/media/Latka.png": "/tent-freelance/static/media/Latka.ce3f8809289c47923cd5.png",
     "static/media/hero-image.jpg": "/tent-freelance/static/media/hero-image.d872513b0b5273195deb.jpg",
     "static/media/Ellipse 12.png": "/tent-freelance/static/media/Ellipse 12.9ee000beb5707fbe65eb.png",
     "static/media/Ellipse 18.png": "/tent-freelance/static/media/Ellipse 18.4badca3795427caf6bc1.png",
@@ -22,11 +23,11 @@
     "static/media/arrowLeft.svg": "/tent-freelance/static/media/arrowLeft.d32d301be21caf4e25d7.svg",
     "static/media/arrowRight.svg": "/tent-freelance/static/media/arrowRight.1b785be4da4475c2e7aa.svg",
     "static/media/burger-menu.svg": "/tent-freelance/static/media/burger-menu.8b9ec4e8449d17e2c21fddc5f4832ec2.svg",
-    "main.244f38dd.css.map": "/tent-freelance/static/css/main.244f38dd.css.map",
-    "main.91600a98.js.map": "/tent-freelance/static/js/main.91600a98.js.map"
+    "main.0e9b49ae.css.map": "/tent-freelance/static/css/main.0e9b49ae.css.map",
+    "main.49c9fda0.js.map": "/tent-freelance/static/js/main.49c9fda0.js.map"
   },
   "entrypoints": [
-    "static/css/main.244f38dd.css",
-    "static/js/main.91600a98.js"
+    "static/css/main.0e9b49ae.css",
+    "static/js/main.49c9fda0.js"
   ]
 }
