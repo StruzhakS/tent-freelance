@@ -1,12 +1,19 @@
 {
   "files": {
-    "main.css": "/tent-freelance/static/css/main.0e9b49ae.css",
-    "main.js": "/tent-freelance/static/js/main.49c9fda0.js",
+    "main.css": "/tent-freelance/static/css/main.36da8f0a.css",
+    "main.js": "/tent-freelance/static/js/main.964b1d09.js",
     "static/media/Latka.png": "/tent-freelance/static/media/Latka.ce3f8809289c47923cd5.png",
     "static/media/hero-image.jpg": "/tent-freelance/static/media/hero-image.d872513b0b5273195deb.jpg",
+    "static/media/usedTent.png": "/tent-freelance/static/media/usedTent.ae252b3377775c30cdde.png",
+    "static/media/search4.png": "/tent-freelance/static/media/search4.eda15e7e4ac760506a6f.png",
+    "static/media/search6.png": "/tent-freelance/static/media/search6.7ac7cb2748a0af2b2b24.png",
+    "static/media/search3.png": "/tent-freelance/static/media/search3.16830ad88c818549efe2.png",
+    "static/media/search5.png": "/tent-freelance/static/media/search5.23f6e60a37111903cc11.png",
     "static/media/Ellipse 12.png": "/tent-freelance/static/media/Ellipse 12.9ee000beb5707fbe65eb.png",
+    "static/media/search2.png": "/tent-freelance/static/media/search2.923fb7414edaf5b53db5.png",
     "static/media/Ellipse 18.png": "/tent-freelance/static/media/Ellipse 18.4badca3795427caf6bc1.png",
     "static/media/Ellipse 15.png": "/tent-freelance/static/media/Ellipse 15.d881485579110774f68c.png",
+    "static/media/search1.png": "/tent-freelance/static/media/search1.3290eb807eacd992cd81.png",
     "static/media/Ellipse 17.png": "/tent-freelance/static/media/Ellipse 17.e29f2bd023edee05c54f.png",
     "static/media/Ellipse 14.png": "/tent-freelance/static/media/Ellipse 14.cf32b153395d7a20df76.png",
     "static/media/Ellipse 13.png": "/tent-freelance/static/media/Ellipse 13.82754b41b125312ab30b.png",
@@ -20,14 +27,15 @@
     "index.html": "/tent-freelance/index.html",
     "static/media/de-flag.svg": "/tent-freelance/static/media/de-flag.728f8a1d8d8d0abfc08e.svg",
     "static/media/es-flag.svg": "/tent-freelance/static/media/es-flag.06064c6cc85d9bcb3e27.svg",
+    "static/media/search.svg": "/tent-freelance/static/media/search.aa1e418aae96c31a5a4872f1bf80d733.svg",
     "static/media/arrowLeft.svg": "/tent-freelance/static/media/arrowLeft.d32d301be21caf4e25d7.svg",
     "static/media/arrowRight.svg": "/tent-freelance/static/media/arrowRight.1b785be4da4475c2e7aa.svg",
     "static/media/burger-menu.svg": "/tent-freelance/static/media/burger-menu.8b9ec4e8449d17e2c21fddc5f4832ec2.svg",
-    "main.0e9b49ae.css.map": "/tent-freelance/static/css/main.0e9b49ae.css.map",
-    "main.49c9fda0.js.map": "/tent-freelance/static/js/main.49c9fda0.js.map"
+    "main.36da8f0a.css.map": "/tent-freelance/static/css/main.36da8f0a.css.map",
+    "main.964b1d09.js.map": "/tent-freelance/static/js/main.964b1d09.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e9b49ae.css",
-    "static/js/main.49c9fda0.js"
+    "static/css/main.36da8f0a.css",
+    "static/js/main.964b1d09.js"
   ]
 }
