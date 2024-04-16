@@ -8,9 +8,8 @@ const FindUs = () => {
   const { t } = useTranslation()
   
   const handleClick = () => {
-    // Замініть координати на координати вашої точки
-    const latitude = 48.526127824032066;
-    const longitude = 35.035331775980296;
+    const latitude = 48.46604243363284;
+    const longitude = 35.04520575868492;
     const url = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
 
     window.open(url, '_blank');

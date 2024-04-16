@@ -1,0 +1,37 @@
+.footerSection {
+  padding: 18px 33px;
+}
+
+.footerLogo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+.footerAdress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerTel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.5px;
+  text-align: left;
+  color: rgba(2, 129, 94, 1);
+}
+
+.contactWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
