@@ -1,3 +1,4 @@
+import FindUs from 'components/findUs/FindUs';
 import HeroComponent from 'components/heroComponent/HeroComponent';
 import HowWeWork from 'components/howWeWork/HowWeWork';
 import Lots from 'components/lots/Lots';
@@ -14,7 +15,8 @@ const HomePage = () => {
       <UniqueCategories />
       <UniqueOffers />
       <VideoTutorials />
-      <Lots/>
+      <Lots />
+      <FindUs/>
     </>
   );
 };
