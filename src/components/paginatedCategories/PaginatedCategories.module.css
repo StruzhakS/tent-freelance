@@ -1,6 +1,6 @@
 .paginatedOffers {
   display: flex;
-  overflow: hidden;
+  overflow-x: scroll;
   gap: 30px;
 }
 
