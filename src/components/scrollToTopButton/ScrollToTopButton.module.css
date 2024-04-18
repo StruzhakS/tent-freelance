@@ -10,4 +10,5 @@
   border-radius: 50%;
   background: rgba(241, 117, 86, 1);
   cursor: pointer;
+  z-index: 1;
 }

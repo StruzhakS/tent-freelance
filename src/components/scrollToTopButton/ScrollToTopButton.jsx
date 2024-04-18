@@ -5,10 +5,9 @@ import arrowTop from '../../images/arrowTop.png';
 export const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Визначення, чи потрібно показувати кнопку при прокручуванні
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > window.innerHeight * 3) {
+      if (window.pageYOffset > window.innerHeight * 0.9) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -22,7 +21,6 @@ export const ScrollToTopButton = () => {
     };
   }, []);
 
-  // Підйом скролла при кліку на кнопку
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -31,13 +29,11 @@ export const ScrollToTopButton = () => {
   };
 
   return (
-    <div>
-      {isVisible && (
-        <button className={s.scrollToTopBtn} onClick={scrollToTop}>
-          <img src={arrowTop} alt="go to top of website" />
-        </button>
-      )}
-    </div>
+    isVisible && (
+      <button className={s.scrollToTopBtn} onClick={scrollToTop}>
+        <img src={arrowTop} alt="go to top of website" />
+      </button>
+    )
   );
 };
 

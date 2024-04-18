@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import s from './PaginatedCategories.module.css'
 
 const images = require.context('../../images', true);
-const cardsPerPage = 4;
+// const cardsPerPage = 4;
 
 const PaginatedCategories = ({ category }) => {
-  const [startIndex, setStartIndex] = useState(0);
+  // const [startIndex, setStartIndex] = useState(0);
 
   const renderCards = () => {
-    const endIndex = startIndex + cardsPerPage;
+    // const endIndex = startIndex + cardsPerPage;
 
-    return category.slice(startIndex, endIndex).map((card, index) => (
-      <div key={startIndex + index}>
+    return category.map((card, index) => (
+      <div key={index} className={s.categoryCard}>
         <img
           src={images(`./${card.logo}`)}
           width={60}
@@ -23,16 +23,16 @@ const PaginatedCategories = ({ category }) => {
     ));
   };
 
-  const goToPrevCard = () => {
-    setStartIndex(prev => prev - 1);
-  };
+  // const goToPrevCard = () => {
+  //   setStartIndex(prev => prev - 1);
+  // };
 
-  const goToNextCard = () => {
-    setStartIndex(prev => prev + 1);
-  };
+  // const goToNextCard = () => {
+  //   setStartIndex(prev => prev + 1);
+  // };
   return (
     <>
-      <div className={s.arrowWraper}>
+      {/* <div className={s.arrowWraper}>
         <button
           className={s.arrowBtn}
           onClick={goToPrevCard}
@@ -47,7 +47,7 @@ const PaginatedCategories = ({ category }) => {
         >
           &rarr;
         </button>
-      </div>
+      </div> */}
       <div className={s.paginatedOffers}>{renderCards()}</div>
     </>
   );

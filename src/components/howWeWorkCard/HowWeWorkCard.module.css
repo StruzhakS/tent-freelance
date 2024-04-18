@@ -31,6 +31,32 @@
   background-color: transparent;
   font-size: 14px;
   line-height: 1.28;
-  letter-spacing: 0.01%;
+  letter-spacing: 0.14px;
   color: rgba(2, 129, 94);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);
+  }
+
+  .titleWrapper {
+    display: block;
+  }
+  .titleWrapper img {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .subTitle {
+    text-align: justify;
+  }
+
+  .readMoreBtn {
+    margin-right: auto;
+    margin-top: auto;
+    font-weight: bold;
+  }
 }

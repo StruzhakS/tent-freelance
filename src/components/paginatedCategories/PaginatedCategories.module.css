@@ -1,5 +1,6 @@
 .paginatedOffers {
   display: flex;
+  overflow: hidden;
   gap: 30px;
 }
 
@@ -18,4 +19,8 @@
   position: absolute;
   top: 84px;
   right: 20px;
+}
+
+.categoryCard {
+  width: calc(100% / 3.5);
 }

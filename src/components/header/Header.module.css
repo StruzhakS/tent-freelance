@@ -9,3 +9,72 @@
 .menuBtn {
   background-color: transparent;
 }
+
+.headerNavigate {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .headerContainer {
+    justify-content: initial;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .headerNavigate {
+    display: flex;
+    width: 100%;
+  }
+
+  .navigate {
+    display: flex;
+    width: 65%;
+    margin-right: 10px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .navigate a {
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+    word-wrap: break-word;
+  }
+  .navigate a.active {
+    color: orange;
+  }
+  .telHeader {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+    color: rgba(2, 129, 94, 1);
+  }
+
+  .languageWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .languagesSelect {
+    margin-left: auto;
+    font-weight: bold;
+    width: 44px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .navigate {
+    flex-direction: column;
+  }
+}
