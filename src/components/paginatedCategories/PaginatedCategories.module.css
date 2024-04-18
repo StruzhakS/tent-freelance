@@ -1,5 +1,6 @@
 .paginatedOffers {
   display: flex;
+  width: calc(100vw - 60px);
   overflow-x: scroll;
   gap: 30px;
 }
@@ -22,5 +23,6 @@
 }
 
 .categoryCard {
-  width: calc(100% / 3.5);
+  display: inline-block;
+  width: calc((100vh - 60px) / 4.5);
 }
