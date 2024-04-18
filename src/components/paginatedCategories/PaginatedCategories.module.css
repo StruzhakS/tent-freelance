@@ -1,8 +1,19 @@
+@media screen and (max-width: 767px) {
+  .paginatedOffers {
+    overflow: hidden;
+  }
+}
+
 .paginatedOffers {
   display: flex;
-  width: calc(100vw - 60px);
+  /* width: calc(100vw - 50px); */
   overflow-x: scroll;
   gap: 30px;
+}
+
+.categoryImg {
+  width: 60px;
+  height: 60px;
 }
 
 .arrowBtn {
@@ -23,6 +34,27 @@
 }
 
 .categoryCard {
-  display: inline-block;
-  width: calc((100vh - 60px) / 4.5);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+  width: calc((100vh - 60px) / 5.5);
+}
+
+@media screen and (min-width: 768px) {
+  .paginatedOffers {
+    /* display: flex; */
+    overflow: scroll;
+  }
+
+  .categoryImg {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+  }
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+  }
 }

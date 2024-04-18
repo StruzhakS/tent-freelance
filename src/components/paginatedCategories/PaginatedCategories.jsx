@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './PaginatedCategories.module.css'
 
 const images = require.context('../../images', true);
@@ -13,9 +13,8 @@ const PaginatedCategories = ({ category }) => {
     return category.map((card, index) => (
       <div key={index} className={s.categoryCard}>
         <img
+          className={s.categoryImg}
           src={images(`./${card.logo}`)}
-          width={60}
-          height={60}
           alt="Step Logo"
         />
         <h3>{card.title}</h3>
