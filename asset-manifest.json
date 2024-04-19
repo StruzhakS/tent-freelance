@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/tent-freelance/static/css/main.4f7caacc.css",
-    "main.js": "/tent-freelance/static/js/main.7e43fbf8.js",
+    "main.css": "/tent-freelance/static/css/main.e6dbf0bb.css",
+    "main.js": "/tent-freelance/static/js/main.1e67baa2.js",
     "static/media/Latka.png": "/tent-freelance/static/media/Latka.ce3f8809289c47923cd5.png",
     "static/media/hero-image.jpg": "/tent-freelance/static/media/hero-image.d872513b0b5273195deb.jpg",
     "static/media/usedTent.png": "/tent-freelance/static/media/usedTent.ae252b3377775c30cdde.png",
+    "static/media/facebook.png": "/tent-freelance/static/media/facebook.4401c9fb45adbe7d76d3.png",
     "static/media/search4.png": "/tent-freelance/static/media/search4.eda15e7e4ac760506a6f.png",
     "static/media/search6.png": "/tent-freelance/static/media/search6.7ac7cb2748a0af2b2b24.png",
     "static/media/search3.png": "/tent-freelance/static/media/search3.16830ad88c818549efe2.png",
@@ -31,11 +32,11 @@
     "static/media/arrowLeft.svg": "/tent-freelance/static/media/arrowLeft.d32d301be21caf4e25d7.svg",
     "static/media/arrowRight.svg": "/tent-freelance/static/media/arrowRight.1b785be4da4475c2e7aa.svg",
     "static/media/burger-menu.svg": "/tent-freelance/static/media/burger-menu.8b9ec4e8449d17e2c21fddc5f4832ec2.svg",
-    "main.4f7caacc.css.map": "/tent-freelance/static/css/main.4f7caacc.css.map",
-    "main.7e43fbf8.js.map": "/tent-freelance/static/js/main.7e43fbf8.js.map"
+    "main.e6dbf0bb.css.map": "/tent-freelance/static/css/main.e6dbf0bb.css.map",
+    "main.1e67baa2.js.map": "/tent-freelance/static/js/main.1e67baa2.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f7caacc.css",
-    "static/js/main.7e43fbf8.js"
+    "static/css/main.e6dbf0bb.css",
+    "static/js/main.1e67baa2.js"
   ]
 }
