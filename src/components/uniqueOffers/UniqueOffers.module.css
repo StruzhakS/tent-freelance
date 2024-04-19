@@ -135,9 +135,35 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
   .activePage {
     background-color: rgba(2, 129, 94, 1);
     color: rgba(2, 129, 94, 1);
+  }
+
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: rgba(2, 129, 94, 1);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+  }
+
+  .addOgo {
+    left: 0;
+  }
+
+  .loginLink {
+    right: 0;
   }
 }

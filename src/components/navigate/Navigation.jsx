@@ -4,13 +4,13 @@ import s from '../header/Header.module.css'
 import css from '../footer/Footer.module.css'
 
 const Navigation = ({  t, footer }) => {
-  console.log(footer);
 
   const location = useLocation();
-
+  
   const isActive = path => {
     return location.pathname === path;
   };
+
   return (
     <nav className={`${ footer ?  css.navigate: s.navigate }`}>
       <NavLink to={'/'} className={isActive('/') ? s.active : ''}>

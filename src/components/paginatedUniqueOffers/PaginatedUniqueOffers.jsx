@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import s from '../uniqueOffers/UniqueOffers.module.css';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 const PaginatedUniqueOffers = ({ itemsPerPage, items, Items }) => {
   const [itemOffset, setItemOffset] = useState(0);
@@ -24,18 +25,28 @@ const PaginatedUniqueOffers = ({ itemsPerPage, items, Items }) => {
         t={t}
         isMobileScreen={isMobileScreen}
       />
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="&rarr;"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel=" &larr;"
-        renderOnZeroPageCount={null}
-        containerClassName={s.paginationContainer}
-        pageClassName={s.pageClassName}
-        activeClassName={s.activePage}
-      />
+      <div style={{ position: 'relative' }}>
+        <div>
+          <NavLink className={`${s.link} ${s.addOgo}`} to={'add-announcement'}>
+            {t('Add announcement')}
+          </NavLink>
+          <NavLink className={`${s.link} ${s.loginLink}`} to={'login'}>
+            {t('Enter')}/ {t('Register')}
+          </NavLink>
+        </div>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="&rarr;"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel=" &larr;"
+          renderOnZeroPageCount={null}
+          containerClassName={s.paginationContainer}
+          pageClassName={s.pageClassName}
+          activeClassName={s.activePage}
+        />
+      </div>
     </>
   );
 };
