@@ -4,9 +4,14 @@
   }
 }
 
+.category {
+  position: relative;
+  padding: 0 40px;
+}
+
 .paginatedOffers {
+  width: 100%;
   display: flex;
-  /* width: calc(100vw - 50px); */
   overflow-x: scroll;
   gap: 30px;
 }
@@ -17,12 +22,21 @@
 }
 
 .arrowBtn {
+  position: absolute;
   background-color: transparent;
   color: rgba(40, 111, 108, 1);
   font-weight: 900;
   font-size: 24px;
+  top: 50px;
 }
 
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
 .arrowBtn:disabled {
   color: rgba(15, 49, 65, 1);
 }
@@ -41,20 +55,41 @@
   width: calc((100vh - 60px) / 5.5);
 }
 
+.categoryTitle {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 11.5px;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .paginatedOffers {
-    /* display: flex; */
-    overflow: scroll;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    /* width: 100%; */
+    overflow: hidden;
+    margin-bottom: 42px;
+  }
+
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    width: calc(90% / 6);
   }
 
   .categoryImg {
     display: inline-block;
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
   }
-  .categoryCard {
+
+  .categoryTitle {
     display: flex;
-    flex-direction: column;
-    width: 140px;
+    justify-content: flex-end;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
   }
 }

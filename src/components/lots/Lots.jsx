@@ -25,7 +25,8 @@ const Lots = () => {
       <div style={{ position: 'relative', marginBottom: '30px' }}>
         <PaginatedCategories category={searchCategory} />
       </div>
-      <UsedTents />
+
+       <UsedTents />
     </section>
   );
 };

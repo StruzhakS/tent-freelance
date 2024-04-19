@@ -75,6 +75,11 @@
     justify-content: space-evenly;
   }
 
+  .offerImage {
+    width: 100%;
+    height: 100%;
+  }
+
   .offerItem {
     display: flex;
     flex-direction: column;
@@ -110,5 +115,29 @@
     letter-spacing: -0.03em;
     text-align: right;
     margin-top: 28px;
+  }
+
+  .paginationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 84px;
+    font-size: 32px;
+  }
+
+  .pageClassName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  .activePage {
+    background-color: rgba(2, 129, 94, 1);
+    color: rgba(2, 129, 94, 1);
   }
 }

@@ -37,7 +37,10 @@ const scrollRight = () => {
     });
     setShowScrollBack(true);
   }
-};
+  };
+  
+  const mobileScreen = isMobile();
+
 
 const scrollLeft = () => {
   if (containerRef.current) {
@@ -48,33 +51,35 @@ const scrollLeft = () => {
   }
 };
 
-useEffect(() => {
-  const container = containerRef.current;
-  container.addEventListener('mouseenter', () => {
-    container.classList.add('hovered');
-  });
-  container.addEventListener('mouseleave', () => {
-    container.classList.remove('hovered');
-  });
 
-  const handleScroll = () => {
-    setShowScrollBack(container.scrollLeft > 0); // Перевіряємо, чи прокручено вправо
-  };
+  useEffect(() => {
+    if (!mobileScreen) {
+      const container = containerRef.current;
+      container.addEventListener('mouseenter', () => {
+        container.classList.add('hovered');
+      });
+      container.addEventListener('mouseleave', () => {
+        container.classList.remove('hovered');
+      });
 
-  container.addEventListener('scroll', handleScroll);
+      const handleScroll = () => {
+        setShowScrollBack(container.scrollLeft > 0); // Перевіряємо, чи прокручено вправо
+      };
 
-  return () => {
-    container.removeEventListener('mouseenter', () => {
-      container.classList.add('hovered');
-    });
-    container.removeEventListener('mouseleave', () => {
-      container.classList.remove('hovered');
-    });
-    container.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+      container.addEventListener('scroll', handleScroll);
 
-const mobileScreen = isMobile()
+      return () => {
+        container.removeEventListener('mouseenter', () => {
+          container.classList.add('hovered');
+        });
+        container.removeEventListener('mouseleave', () => {
+          container.classList.remove('hovered');
+        });
+        container.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [mobileScreen]);
+
 
   return (
     <section className={s.section}>

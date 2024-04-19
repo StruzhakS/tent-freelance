@@ -38,3 +38,19 @@
   letter-spacing: -0.03em;
   text-align: left;
 }
+
+@media screen and (min-width: 768px) {
+  .usedTentItem {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 60px) / 4);
+  }
+  .usedTentList {
+    justify-content: flex-start;
+  }
+
+  .offerImage {
+    width: 100%;
+    height: 100%;
+  }
+}

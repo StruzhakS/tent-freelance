@@ -11,4 +11,9 @@
   background: rgba(241, 117, 86, 1);
   cursor: pointer;
   z-index: 1;
+  opacity: 0.5;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
 }

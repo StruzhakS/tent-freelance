@@ -3,6 +3,7 @@
   align-items: center;
   position: relative;
   margin-bottom: 18px;
+  background-color: rgba(242, 244, 245, 1);
 }
 
 .searchInput {
