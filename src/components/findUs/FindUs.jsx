@@ -3,8 +3,11 @@ import s from './FindUs.module.css'
 import { useTranslation } from 'react-i18next';
 import locationImg from '../../images/point.png'
 import phoneLogo from '../../images/Phonetel.png'
+import { isMobile } from 'constants/useMediaQueries';
 
 const FindUs = () => {
+  const mobileScreeen = isMobile();
+
   const { t } = useTranslation()
   
   const handleClick = () => {
@@ -19,7 +22,7 @@ const FindUs = () => {
   return (
     <section className={s.section}>
       <h2 className={s.sectionTitle}>
-        {t('Find us')}: <br /> <span>{t('Location')}</span>
+        {t('Find us')}: {mobileScreeen&& <br />} <span>{t('Location')}</span>
       </h2>
       <iframe
         className={s.googlemap}

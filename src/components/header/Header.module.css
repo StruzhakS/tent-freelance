@@ -17,6 +17,7 @@
 @media screen and (min-width: 768px) {
   .headerContainer {
     justify-content: initial;
+    margin-bottom: 10px;
   }
 
   .menuBtn {
@@ -26,6 +27,10 @@
   .headerNavigate {
     display: flex;
     width: 100%;
+  }
+
+  .headerLogo {
+    width: 252px;
   }
 
   .navigate {

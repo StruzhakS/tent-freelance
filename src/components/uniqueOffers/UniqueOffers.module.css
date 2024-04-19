@@ -121,7 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
     margin-top: 84px;
     font-size: 32px;
   }
@@ -133,8 +133,8 @@
     border: 1px solid black;
     color: white;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
   .activePage {
     background-color: rgba(2, 129, 94, 1);

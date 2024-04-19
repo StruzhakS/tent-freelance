@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import s from './Header.module.css';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-tent.svg';
 import burgerMenu from '../../images/burger-menu.svg';
 import ScrollToTopButton from 'components/scrollToTopButton/ScrollToTopButton';
@@ -11,14 +11,11 @@ import ua from '../../images/Ukraine.png';
 import es from '../../images/es-flag.svg';
 import de from '../../images/de-flag.svg';
 import ru from '../../images/Russian Federation.png';
+import Navigation from 'components/navigate/Navigation';
 
 const Header = ({ toggleBurgerMenu }) => {
   const { t } = useTranslation();
-  const location = useLocation();
 
-  const isActive = path => {
-    return location.pathname === path;
-  };
   const [selectedLanguage, setSelectedLanguage] = useState('ua');
 
   const changeLanguage = lng => {
@@ -34,43 +31,10 @@ const Header = ({ toggleBurgerMenu }) => {
   return (
     <header className={s.headerContainer}>
       <NavLink className={s.tentLink} to={'/'}>
-        <img
-          src={logo}
-          width={184}
-          height={50}
-          alt="logo repair tent"
-        />
+        <img src={logo} className={s.headerLogo} width={184} height={50} alt="logo repair tent" />
       </NavLink>
       <div className={s.headerNavigate}>
-        <nav className={s.navigate}>
-          <NavLink to={'/'} className={isActive('/') ? s.active : ''}>
-            {t('Homepage')}
-          </NavLink>
-          <NavLink
-            to={'/promotions'}
-            className={isActive('/promotions') ? s.active : ''}
-          >
-            {t('Promotions')}
-          </NavLink>
-          <NavLink
-            to={'/video-tips'}
-            className={isActive('/video-tips') ? s.active : ''}
-          >
-            {t('Video tips')}
-          </NavLink>
-          <NavLink
-            to={'/used-tents'}
-            className={isActive('/used-tents') ? s.active : ''}
-          >
-            {t('Used tents')}
-          </NavLink>
-          <NavLink
-            to={'/contacts'}
-            className={isActive('/contacts') ? s.active : ''}
-          >
-            {t('Сontacts')}
-          </NavLink>
-        </nav>
+        <Navigation t={t} />
         <div className={s.languageWrapper}>
           <img
             src={

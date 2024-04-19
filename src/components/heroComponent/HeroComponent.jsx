@@ -5,11 +5,10 @@ import { useMediaQuery } from 'react-responsive';
 import smallImg from '../../images/heroImageSmall.jpg';
 import smallImg_2 from '../../images/heroImageSmall_2.jpg';
 import smallImg_3 from '../../images/heroImageSmall_3.jpg';
+
 const HeroComponent = () => {
-  // const isMobile = window.innerWidth <= 768; // Перевірка, чи екран мобільний
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-
-
+  
   return isMobile ? <div className={s.imageWrapper}>
     {isMobile ? (
       <div className={s.heroText}>

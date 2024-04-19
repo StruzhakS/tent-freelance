@@ -28,7 +28,7 @@ function Items({ currentItems }) {
 const UsedTents = () => {
   const mobileScreen = isMobile();
   const visibleOffers = mobileScreen ? usedTents.slice(0, 6) : usedTents;
-  console.log(usedTents);
+
   return mobileScreen ? (
     <Items currentItems={visibleOffers} />
   ) : (

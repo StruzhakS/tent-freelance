@@ -53,3 +53,10 @@
   text-transform: uppercase;
   border-radius: 15px;
 }
+
+@media screen and (min-width: 768px) {
+  .contactUsWrapper {
+    justify-content: center;
+    gap: 114px;
+  }
+}
