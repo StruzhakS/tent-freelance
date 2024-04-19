@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomePage from 'pages/HomePage';
 import Header from 'components/header/Header';
@@ -15,7 +15,7 @@ import RegistrationPage from 'pages/RegistrationPage';
 import AddAnnouncementPage from 'pages/AddAnnouncementPage';
 
 function App() {
-  const isAccessToken = false;
+  // const isAccessToken = false;
 
   const [isOpen, setIsOpen] = useState(false);
 
