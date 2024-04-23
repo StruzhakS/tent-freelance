@@ -5,13 +5,14 @@ import latka from '../../images/Latka.png'
 import { useTranslation } from 'react-i18next'
 import { isMobile } from 'constants/useMediaQueries'
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
-function Items({ currentItems, t, isMobileScreen }) {
+function Items({ currentItems, t, isMobileScreen, handleClick }) {
+
   return (
     <ul className={s.offersList}>
       {currentItems.map(el => (
-        <li key={el.id} className={s.offerItem}>
+        <li key={el.id} className={s.offerItem} onClick={handleClick}>
           <img
             className={s.offerImage}
             src={el.img ? el.img : latka}
@@ -85,7 +86,12 @@ const UniqueOffers = () => {
 const isMobileScreen = isMobile()
 
 const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
-  
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+ navigate('/promotions');
+}
+
   return (
     <section className={s.section}>
       {isMobileScreen ? (
@@ -93,6 +99,7 @@ const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
           currentItems={visibleOffers}
           t={t}
           isMobileScreen={isMobileScreen}
+          handleClick={handleClick}
         />
       ) : (
         <PaginatedUniqueOffers
