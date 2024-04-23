@@ -1,5 +1,5 @@
 .section {
-  padding: 16px 33px;
+  padding: 16px 16px;
 }
 .offersList {
   display: flex;
@@ -84,7 +84,7 @@
     flex-direction: column;
     width: calc((100% - 10%) / 2);
     border: 4px solid rgba(2, 129, 94, 1);
-    padding: 32px 36px;
+    padding: 32px 16px;
   }
 
   .itemDescription {

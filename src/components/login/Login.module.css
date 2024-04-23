@@ -69,8 +69,12 @@ input {
 }
 
 .registerButton {
-  background-color: white;
+  background-color: #fbfbfd;
   color: rgba(241, 117, 86, 1);
   text-decoration: underline;
   text-transform: uppercase;
+}
+
+.registerButton:hover {
+  text-decoration: none;
 }
