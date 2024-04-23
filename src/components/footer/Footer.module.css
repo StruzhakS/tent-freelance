@@ -36,6 +36,19 @@
   align-items: center;
 }
 
+.socialBtn {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.socialLinks {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
 @media screen and (min-width: 768px) {
   .footerSection {
     display: flex;

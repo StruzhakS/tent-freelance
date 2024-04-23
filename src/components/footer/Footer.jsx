@@ -9,9 +9,7 @@ import { isMobile } from 'constants/useMediaQueries';
 import Navigation from 'components/navigate/Navigation';
 import { useTranslation } from 'react-i18next';
 import email from '../../images/email.png';
-import facebook from '../../images/facebook.png';
-import viber from '../../images/viber.png';
-import telegram from '../../images/telegram-48.png'
+import SocialNetwork from 'components/socialNetwork/SocialNetwork';
 
 const Footer = () => {
   const mobileScreen = isMobile();
@@ -37,15 +35,8 @@ const Footer = () => {
             <img src={phoneFooter} alt="tell " />
             +380501589860
           </a>
-          <a
-            className={s.instagramLink}
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={instagramLogo} alt="logo of instagram" />
-          </a>
         </div>
+          <SocialNetwork />
       </div>
     </footer>
   ) : (
@@ -72,65 +63,15 @@ const Footer = () => {
           44635
         </p>
         <a className={s.footerTel} href="tel:+380501589860">
-          <img src={phoneFooter} width={40} height={40} alt="tell " />{' '}
+          <img src={phoneFooter} width={40} height={40} alt="tell " />
           +380501589860
         </a>
 
         <a className={s.emailLink} href="mailto:remonttent.dn@gmail.com">
-          <img src={email} width={40} height={40} alt="email logo" />{' '}
+          <img src={email} width={40} height={40} alt="email logo" />
           remonttent.dn@gmail.com
         </a>
-        <div className={s.socialLinks}>
-          <a
-            className={s.instagramLink}
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={instagramLogo}
-              width={40}
-              height={40}
-              alt="logo of instagram"
-            />
-          </a>
-          <a
-            className={s.instagramLink}
-            href="https://www.viber.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={viber} width={40} height={40} alt="logo of viber" />
-          </a>
-
-          <a
-            className={s.instagramLink}
-            href="https://www.telegram.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={telegram}
-              width={40}
-              height={40}
-              alt="logo of telegram"
-            />
-          </a>
-
-          <a
-            className={s.instagramLink}
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={facebook}
-              width={40}
-              height={40}
-              alt="logo of facebook"
-            />
-          </a>
-        </div>
+        <SocialNetwork />
       </div>
 
       <Navigation t={t} footer={true} />
