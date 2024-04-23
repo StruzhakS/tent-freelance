@@ -1,8 +1,9 @@
+import Promotions from 'components/promotions/Promotions'
 import React from 'react'
 
 const PromotionsPage = () => {
   return (
-    <div>PromotionsPage</div>
+    <Promotions/>
   )
 }
 

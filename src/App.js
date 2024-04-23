@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import HomePage from 'pages/HomePage';
 import Header from 'components/header/Header';
@@ -13,9 +13,10 @@ import ContactsPage from 'pages/ContactsPage';
 import LoginPage from 'pages/LoginPage';
 import RegistrationPage from 'pages/RegistrationPage';
 import AddAnnouncementPage from 'pages/AddAnnouncementPage';
+import { useSelector } from 'react-redux';
 
 function App() {
-  // const isAccessToken = false;
+  const isAccessToken = useSelector(state => !!state.auth.email);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,32 +28,24 @@ function App() {
     <>
       <Header toggleBurgerMenu={toggleBurgerMenu} />
       <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
-      {/* {isAccessToken ? */}
-        (
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/used-tents" element={<UsedTents />} />
-          <Route path="promotions" element={<PromotionsPage />} />
-          <Route path="used-tents" element={<UsedTentsPage />} />
-          <Route path="video-tips" element={<VideoTutorialsPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
-          add-announcement
-          <Route path="add-announcement" element={<AddAnnouncementPage />} />
-          {/* видалити */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/registration" element={<RegistrationPage />} />
-          {/* Видалити */}
-        </Routes>
-      )
-      {/* //   : (
-      //   <Routes>
-      //     <Route path="/" element={<HomePage />} />
-      //     <Route path="/login" element={<LoginPage />} />
-      //     <Route path="/registration" element={<RegistrationPage />} />
 
-      //     <Route path="*" element={<Navigate to={'/'} />} />
-      //   </Routes>
-      // )} */}
+      <Routes>
+        <Route path="/" element={<HomePage isAccessToken={isAccessToken} />} />
+        <Route path="/used-tents" element={<UsedTents />} />
+        <Route path="promotions" element={<PromotionsPage />} />
+        <Route path="used-tents" element={<UsedTentsPage />} />
+        <Route path="video-tips" element={<VideoTutorialsPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="add-announcement" element={<AddAnnouncementPage />} />
+        <Route path="*" element={<Navigate to={'/'} />} />
+        {!isAccessToken && (
+          <>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/registration" element={<RegistrationPage />} />
+          </>
+        )}
+      </Routes>
+
       <Footer />
     </>
   );

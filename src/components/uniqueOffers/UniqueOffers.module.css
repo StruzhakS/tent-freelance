@@ -96,6 +96,9 @@
   }
 
   .offerBuyBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 160px;
     height: 44px;
   }

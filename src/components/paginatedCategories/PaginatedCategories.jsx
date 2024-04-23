@@ -24,14 +24,23 @@ return mobileScreen
     ))
   : category.slice(startIndex, endIndex).map((card, index) => (
       <div key={index} className={s.categoryCard}>
-        <img
-          className={s.categoryImg}
-          src={images(`./${card.logo}`)}
-          alt="Step Logo"
-        />
+        <div style={{width: "100%", display: "flex"}}>
+          <img
+            className={s.categoryImg}
+            src={images(`./${card.logo}`)}
+            alt="Step Logo"
+          />
+        </div>
 
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '95px'}}>
-        <h3 className={s.categoryTitle}>{card.title}</h3>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            height: '95px',
+          }}
+        >
+          <h3 className={s.categoryTitle}>{card.title}</h3>
         </div>
       </div>
     )); 

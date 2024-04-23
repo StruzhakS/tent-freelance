@@ -40,7 +40,7 @@
   .footerSection {
     display: flex;
     width: 100%;
-    gap: 130px;
+    gap: 20px;
     justify-content: space-between;
   }
 
@@ -51,8 +51,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    width: calc(100% / 3);
+    /* width: calc(100% / 3); */
     text-align: left;
+  }
+
+  .logoWrapper {
+    width: 262px;
   }
 
   .navigate {
@@ -61,6 +65,7 @@
     line-height: 36px;
     color: black;
     text-align: left;
+    width: 150px;
   }
 
   .subtitle {

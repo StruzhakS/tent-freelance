@@ -14,6 +14,20 @@
   display: none;
 }
 
+.exitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background: rgba(2, 129, 94, 1);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.05px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .headerContainer {
     justify-content: initial;
@@ -26,6 +40,8 @@
 
   .headerNavigate {
     display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
   }
 

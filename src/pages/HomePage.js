@@ -10,7 +10,7 @@ import { isMobile } from 'constants/useMediaQueries';
 import React from 'react';
 
 const HomePage = () => {
-  const mobileScreen = isMobile()
+  const mobileScreen = isMobile();
   return (
     <>
       <HeroComponent />
@@ -20,7 +20,7 @@ const HomePage = () => {
       <VideoTutorials />
       <Lots />
       <FindUs />
-     { !mobileScreen && <Franchise />}
+      {!mobileScreen && <Franchise />}
     </>
   );
 };

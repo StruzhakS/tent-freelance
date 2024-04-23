@@ -1,6 +1,7 @@
 {
   "Homepage": "Главная",
   "Promotions": "Акции",
+  "Promotion": "Акция",
   "About us": "Про нас",
   "Video tips": "Видеоуроки",
   "Used tents": "Б/У тенты",
@@ -27,5 +28,13 @@
   "Login": "Войти в учетную запись",
   "Register": "Регистрация",
   "Add announcement": "Добавить обьявление",
-  "repitPass": "Подтвердите пароль"
+  "repitPass": "Подтвердите пароль",
+  "description promotion": "Описание акции",
+  "Details of promotion": "Детали акции",
+  "Cost": "Стоимость",
+  "Your savings": "Ваша экономия",
+  "order a product": "Для заказа товара введите ваши контактные данные",
+  "exit": "Выйти",
+  "leave": "Вы действительно хотите выйти?",
+  "announcement": "Обьявление"
 }

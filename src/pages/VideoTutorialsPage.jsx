@@ -1,8 +1,9 @@
+import ListOfVideo from 'components/videoTutorials/ListOfVideo'
 import React from 'react'
 
 const VideoTutorialsPage = () => {
   return (
-    <div>VideoTutorialsPage</div>
+  <ListOfVideo/>
   )
 }
 

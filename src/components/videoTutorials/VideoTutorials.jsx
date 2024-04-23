@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import s from './VideoTutorials.module.css';
 import { NavLink } from 'react-router-dom';
 import arrowRight from '../../images/moreVideoArrow.png';
-import VideoList from './VideoList';
 import { isMobile } from 'constants/useMediaQueries';
+import Video from './Video';
 
-const videoIds = [
+export const videoIds = [
   {
     videoTitle: 'Ремонт тентов с выездом к заказчику',
     videoId: '0X6fZoFcZ6c',
@@ -103,7 +103,7 @@ const scrollLeft = () => {
         <ul className={s.videoList}>
           {videoIds.slice(0, 4).map((el, idx) => (
             <li key={idx} className={s.videoItem}>
-              <VideoList i={idx} videoId={el.videoId} title={el.videoTitle} />
+              <Video i={idx} videoId={el.videoId} title={el.videoTitle} />
             </li>
           ))}
         </ul>
@@ -114,7 +114,7 @@ const scrollLeft = () => {
           <div className={s.container} ref={containerRef}>
             <div className={s.cards}>
               {videoIds.slice(0, 4).map((el, idx) => (
-                <VideoList
+                <Video
                   key={idx}
                   i={idx}
                   videoId={el.videoId}

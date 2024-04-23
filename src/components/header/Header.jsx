@@ -12,14 +12,25 @@ import es from '../../images/es-flag.svg';
 import de from '../../images/de-flag.svg';
 import ru from '../../images/Russian Federation.png';
 import Navigation from 'components/navigate/Navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../../redux/authSlice/loginSlice';
 
 const Header = ({ toggleBurgerMenu }) => {
   const { t } = useTranslation();
+  const isAccessToken = useSelector(state => !!state.auth.email);
 
   const [selectedLanguage, setSelectedLanguage] = useState('ua');
 
   const changeLanguage = lng => {
     i18n.changeLanguage(lng);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    if (window.confirm(t('leave'))) {
+      dispatch(logoutUser());
+    }
   };
 
   const handleSelectChange = event => {
@@ -31,7 +42,13 @@ const Header = ({ toggleBurgerMenu }) => {
   return (
     <header className={s.headerContainer}>
       <NavLink className={s.tentLink} to={'/'}>
-        <img src={logo} className={s.headerLogo} width={184} height={50} alt="logo repair tent" />
+        <img
+          src={logo}
+          className={s.headerLogo}
+          width={184}
+          height={50}
+          alt="logo repair tent"
+        />
       </NavLink>
       <div className={s.headerNavigate}>
         <Navigation t={t} />
@@ -74,6 +91,11 @@ const Header = ({ toggleBurgerMenu }) => {
           <img src={phoneLogo} width={24} height={24} alt="phonetel logo" />
           +380501589860
         </a>
+        {isAccessToken && (
+          <button className={s.exitBtn} type="button" onClick={handleSubmit}>
+            {t('exit')}
+          </button>
+        )}
       </div>
       <ScrollToTopButton />
       <button type="button" className={s.menuBtn} onClick={toggleBurgerMenu}>

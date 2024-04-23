@@ -1,24 +1,7 @@
-@media screen and (max-width: 767px) {
-  .paginatedOffers {
-    overflow: hidden;
-  }
-}
-
 .category {
   position: relative;
+  /* width: 90%; */
   padding: 0 40px;
-}
-
-.paginatedOffers {
-  width: 100%;
-  display: flex;
-  overflow-x: scroll;
-  gap: 30px;
-}
-
-.categoryImg {
-  width: 60px;
-  height: 60px;
 }
 
 .arrowBtn {
@@ -47,12 +30,26 @@
   right: 20px;
 }
 
+.paginatedOffers {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 30px;
+}
+
+.categoryImg {
+  display: flex;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+}
+
 .categoryCard {
   display: flex;
   align-items: center;
   gap: 15px;
   flex-direction: column;
-  width: calc((100vh - 60px) / 5.5);
+  width: 400px;
 }
 
 .categoryTitle {

@@ -5,6 +5,7 @@ import latka from '../../images/Latka.png'
 import { useTranslation } from 'react-i18next'
 import { isMobile } from 'constants/useMediaQueries'
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers'
+import { NavLink } from 'react-router-dom'
 
 function Items({ currentItems, t, isMobileScreen }) {
   return (
@@ -49,9 +50,9 @@ function Items({ currentItems, t, isMobileScreen }) {
                 }}
               >
                 <p className={s.offerPrice}>{el.price}грн</p>
-                <button type="button" className={s.offerBuyBtn}>
+                <NavLink to={'promotions'} type="button" className={s.offerBuyBtn}>
                   {t('Order')}
-                </button>
+                </NavLink>
               </div>
               <div className={s.promotionWrapper}>
                 <p className={s.promotionDesktop}>Акция действует: </p>

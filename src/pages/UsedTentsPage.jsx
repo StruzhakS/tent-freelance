@@ -1,9 +1,9 @@
+import Announcement from 'components/announcement/Announcement'
 import React from 'react'
 
 const UsedTentsPage = () => {
   return (
-    <div>UsedTentsPage</div>
-  )
+<Announcement/>  )
 }
 
 export default UsedTentsPage

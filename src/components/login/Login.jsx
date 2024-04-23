@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import s from './Login.module.css'
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/authSlice/loginSlice';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -9,6 +11,8 @@ const Login = () => {
       email: '',
       password: ''
   });
+
+  const dispatch = useDispatch()
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -19,8 +23,12 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(loginUser(loginForm))
     console.log('Дані відправлено', loginForm);
+
   };
+
+
 
   return (
     <section className={s.section}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import s from './VideoTutorials.module.css';
 
 
-const VideoList = ({ videoId, title }) => {
+const Video = ({ videoId, title }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -48,4 +48,4 @@ const VideoList = ({ videoId, title }) => {
    );
 };
 
-export default VideoList;
+export default Video;

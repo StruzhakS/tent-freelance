@@ -34,3 +34,20 @@
   font-size: 28px;
   cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+  .modal {
+    display: none;
+    position: fixed;
+    margin: 0;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 70%;
+    overflow: auto;
+    background-color: transparent;
+    padding: 40px;
+  }
+}
