@@ -4,16 +4,20 @@ import { useTranslation } from 'react-i18next';
 import { usedTents } from 'constants/usedTents';
 import tentImg from '../../images/usedTent.png'
 import logoPhone from '../../images/Phonetel.png'
-// import usedTent from '../../images/usedTent.png'
-// import { useNavigate } from 'react-router-dom';
+import usedTent from '../../images/usedTent.png'
+import { useNavigate } from 'react-router-dom';
+import css from '../usedTents/UsedTents.module.css'
 
 const Announcement = ({id = 5}) => {
     const { t } = useTranslation()
     const tent = usedTents.find(el => el.id === id)
     const { title, createdAt,desciption,location,owner,price} = tent;
 
-//  const navigate = useNavigate()
-
+    const navigate = useNavigate()
+    
+    const handleClick = () => {
+   navigate('/used-tents');
+}
     return (
       <div className={s.announSection}>
         <div className={s.announSection}>
@@ -41,28 +45,28 @@ const Announcement = ({id = 5}) => {
           </div>
             </div>
             
-        {/* <div>
+        <div>
           <h2 className={s.relatedAdsTitle}>{t('Related Ads')}</h2>
-          <ul className={s.usedTentList}>
+          <ul className={css.usedTentList}>
             {usedTents.slice(0, 4).map((el, i) => (
               <li
-                className={s.usedTentItem}
+                className={css.usedTentItem}
                 key={el.title + i}
-                onClick={() => navigate('/used-tents')}
+                onClick={handleClick}
               >
                 <img
-                  className={s.usedTentImage}
+                  className={css.usedTentImage}
                   src={el.img ? el.img : usedTent}
                   alt={el.title}
                 />
-                <p className={s.tentTitle}>{el.title}</p>
-                <p className={s.tentPrice}>{el.price} грн</p>
+                <p className={css.tentTitle}>{el.title}</p>
+                <p className={css.tentPrice}>{el.price} грн</p>
                 <p className={s.tentLocation}> {el.location}</p>
                 <p className={s.date}> {el.createdAt}</p>
               </li>
             ))}
           </ul>
-        </div> */}
+        </div>
       </div>
     );
 }

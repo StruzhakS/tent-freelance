@@ -16,8 +16,6 @@ const PaginatedUniqueOffers = ({ itemsPerPage, items, Items, handleClick }) => {
 
   const isAccessToken = useSelector(state => !!state.auth.email);
 
-  console.log(isAccessToken);
-
   const handlePageClick = event => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
