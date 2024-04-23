@@ -7,7 +7,8 @@
   margin: 0 auto;
 }
 
-.title {
+.title,
+.relatedAdsTitle {
   font-size: 30px;
   font-weight: 700;
   line-height: 36.57px;
@@ -15,6 +16,10 @@
   text-align: center;
   color: rgba(241, 117, 86, 1);
   margin-bottom: 22px;
+}
+
+.relatedAdsTitle {
+  color: rgba(2, 129, 94, 1);
 }
 
 .image {
@@ -94,7 +99,8 @@
     justify-content: space-between;
   }
 
-  .title {
+  .title,
+  .relatedAdsTitle {
     font-family: Montserrat;
     font-size: 24px;
     font-weight: 700;
@@ -103,6 +109,11 @@
     margin-bottom: 46px;
   }
 
+  .relatedAdsTitle {
+    margin-top: 40px;
+    text-align: center;
+    color: rgba(2, 129, 94, 1);
+  }
   .image {
     width: 100%;
   }
@@ -121,5 +132,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .usedTentList {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
+  .usedTentItem {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 60px) / 4);
+    border-radius: 15px;
+    overflow: hidden;
   }
 }

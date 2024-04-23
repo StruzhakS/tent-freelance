@@ -5,20 +5,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: 26px;
-  row-gap: 16px;
+  gap: 16px;
 }
 
 .offerItem {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc(((100% - 40px) / 2));
 }
 
 .offerImage {
   margin-bottom: 16px;
-  width: 140px;
-  height: 110px;
+  width: 100%;
 }
 
 .offerTitle {

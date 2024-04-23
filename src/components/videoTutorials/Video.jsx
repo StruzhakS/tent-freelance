@@ -15,7 +15,7 @@ const Video = ({ videoId, title }) => {
     
    return (
      <>
-       <div className={s.videoItem} onClick={openModal}>
+       <div className={s.videoItemWrapper} onClick={openModal}>
          <img
            className={s.imageOfVideo}
            alt="Video Thumbnail"

@@ -19,7 +19,7 @@ return mobileScreen
           src={images(`./${card.logo}`)}
           alt="Step Logo"
         />
-        <h3>{card.title}</h3>
+        <h3 className={s.categoryTitle}>{card.title}</h3>
       </div>
     ))
   : category.slice(startIndex, endIndex).map((card, index) => (

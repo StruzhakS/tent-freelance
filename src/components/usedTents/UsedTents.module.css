@@ -3,14 +3,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
+  /* width: 90%; */
 }
 
 .usedTentItem {
-  width: 150px;
+  width: calc((100% - 60px) / 2);
 }
 
 .usedTentImage {
   margin-bottom: 16px;
+  width: 100%;
 }
 .tentTitle {
   font-size: 12px;

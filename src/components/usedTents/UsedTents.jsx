@@ -6,7 +6,7 @@ import { isMobile } from 'constants/useMediaQueries'
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers'
 import { useNavigate } from 'react-router-dom'
 
-function TentsByUser({ currentItems, handleClick }) {
+export function TentsByUser({ currentItems, handleClick }) {
   return (
     <ul className={s.usedTentList}>
       {currentItems.map((el, i) => (

@@ -33,6 +33,7 @@
 .paginatedOffers {
   display: flex;
   width: 100%;
+  height: 145px;
   overflow-x: scroll;
   gap: 30px;
 }
@@ -40,8 +41,16 @@
 .categoryImg {
   display: flex;
   align-items: center;
-  /* width: 100%;
-  height: 100%; */
+  width: 60px;
+  /* height: 100%; */
+}
+
+.categoryTitle {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 11.5px;
+  letter-spacing: -0.03em;
+  text-align: center;
 }
 
 .categoryCard {
@@ -65,7 +74,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
-    /* width: 100%; */
+    height: auto;
     overflow: hidden;
     margin-bottom: 42px;
   }
