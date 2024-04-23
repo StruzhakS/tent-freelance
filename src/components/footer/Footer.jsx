@@ -4,7 +4,6 @@ import s from './Footer.module.css';
 import logo from '../../images/logo-tent.svg';
 import pointFooter from '../../images/pointerFooter.png';
 import phoneFooter from '../../images/Phonefooter.png';
-import instagramLogo from '../../images/instagramLogo.png';
 import { isMobile } from 'constants/useMediaQueries';
 import Navigation from 'components/navigate/Navigation';
 import { useTranslation } from 'react-i18next';
