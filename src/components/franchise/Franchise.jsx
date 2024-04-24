@@ -15,7 +15,6 @@ const Franchise = () => {
     setFranchiseForm(prev => {
       return { ...prev, [name]: value };
     });
-    // setFranchiseForm(console.log(franchiseForm));
   };
 
   const handleSubmit = e => {

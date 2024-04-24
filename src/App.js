@@ -14,8 +14,11 @@ import LoginPage from 'pages/LoginPage';
 import RegistrationPage from 'pages/RegistrationPage';
 import AddAnnouncementPage from 'pages/AddAnnouncementPage';
 import { useSelector } from 'react-redux';
+import { isMobile } from 'constants/useMediaQueries';
 
 function App() {
+const mobileScreen = isMobile()
+
   const isAccessToken = useSelector(state => !!state.auth.email);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +26,12 @@ function App() {
   const toggleBurgerMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log(isOpen);
 
   return (
     <>
       <Header toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
-      <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
-
+     { mobileScreen &&
+      <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />}
       <Routes>
         <Route path="/" element={<HomePage isAccessToken={isAccessToken} />} />
         <Route path="/used-tents" element={<UsedTents />} />
@@ -46,7 +48,6 @@ function App() {
           </>
         )}
       </Routes>
-
       <Footer />
     </>
   );

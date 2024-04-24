@@ -144,7 +144,7 @@
     color: rgba(2, 129, 94, 1);
   }
 
-  .link {
+  /* .link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,5 +167,5 @@
 
   .loginLink {
     right: 5%;
-  }
+  } */
 }
