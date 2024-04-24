@@ -28,6 +28,27 @@
   cursor: pointer;
 }
 
+.navigate {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10px;
+  gap: 20px;
+  width: 100%;
+}
+
+.navigate a {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  word-wrap: break-word;
+}
+.navigate a.active {
+  color: orange;
+}
+
 @media screen and (min-width: 768px) {
   .headerContainer {
     justify-content: initial;
@@ -50,25 +71,14 @@
   }
 
   .navigate {
-    display: flex;
+    flex-direction: row;
+    padding: 0;
     width: 65%;
     margin-right: 10px;
     justify-content: space-between;
     gap: 10px;
   }
 
-  .navigate a {
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: left;
-    color: rgba(0, 0, 0, 1);
-    word-wrap: break-word;
-  }
-  .navigate a.active {
-    color: orange;
-  }
   .telHeader {
     display: flex;
     flex-wrap: nowrap;

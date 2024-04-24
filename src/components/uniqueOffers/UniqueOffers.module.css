@@ -148,7 +148,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    padding: 20px 10px;
     height: 50px;
     border-radius: 15px;
     background-color: rgba(2, 129, 94, 1);
@@ -162,10 +162,10 @@
   }
 
   .addOgo {
-    left: 0;
+    left: 5%;
   }
 
   .loginLink {
-    right: 0;
+    right: 5%;
   }
 }

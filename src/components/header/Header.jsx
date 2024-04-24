@@ -15,7 +15,7 @@ import Navigation from 'components/navigate/Navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../redux/authSlice/loginSlice';
 
-const Header = ({ toggleBurgerMenu }) => {
+const Header = ({ toggleBurgerMenu, isOpen}) => {
   const { t } = useTranslation();
   const isAccessToken = useSelector(state => !!state.auth.email);
 
@@ -98,9 +98,10 @@ const Header = ({ toggleBurgerMenu }) => {
         )}
       </div>
       <ScrollToTopButton />
+     { !isOpen &&
       <button type="button" className={s.menuBtn} onClick={toggleBurgerMenu}>
         <img src={burgerMenu} alt="logo burger menu" />
-      </button>
+      </button>}
     </header>
   );
 };

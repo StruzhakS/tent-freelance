@@ -32,9 +32,9 @@ const UsedTents = () => {
   const navigate = useNavigate();
   
   const handleClick = (e) => {
-    console.log(e);
     navigate("used-tents");
   }
+  
   return mobileScreen ? (
     <TentsByUser currentItems={visibleOffers} handleClick={handleClick} />
   ) : (

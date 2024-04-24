@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Header toggleBurgerMenu={toggleBurgerMenu} />
+      <Header toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
       <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
 
       <Routes>
