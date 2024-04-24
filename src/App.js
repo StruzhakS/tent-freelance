@@ -23,6 +23,7 @@ function App() {
   const toggleBurgerMenu = () => {
     setIsOpen(!isOpen);
   };
+  console.log(isOpen);
 
   return (
     <>

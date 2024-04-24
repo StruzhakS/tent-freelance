@@ -7,7 +7,17 @@
 }
 
 .menuBtn {
+  opacity: 1;
+  /* height: auto; */
+  transition: opacity 1.5s;
+
   background-color: transparent;
+}
+
+.hiddenMenuBtn {
+  opacity: 0;
+  /* height: 0; */
+  transition: opacity 0.8s;
 }
 
 .headerNavigate {

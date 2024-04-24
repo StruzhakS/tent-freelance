@@ -15,7 +15,7 @@ import Navigation from 'components/navigate/Navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../redux/authSlice/loginSlice';
 
-const Header = ({ toggleBurgerMenu, isOpen}) => {
+const Header = ({ toggleBurgerMenu, isOpen }) => {
   const { t } = useTranslation();
   const isAccessToken = useSelector(state => !!state.auth.email);
 
@@ -73,13 +73,11 @@ const Header = ({ toggleBurgerMenu, isOpen}) => {
             className={s.languagesSelect}
           >
             <option value="" defaultValue={''}>
-              {t(
-                selectedLanguage === 'ua'
-                  ? 'Мова'
-                  : selectedLanguage === 'ru'
-                  ? 'Язык'
-                  : 'Language'
-              )}
+              {selectedLanguage === 'ua'
+                ? 'Мова'
+                : selectedLanguage === 'ru'
+                ? 'Язык'
+                : 'Language'}
             </option>
             <option value="ua"> UA</option>
             <option value="ru">RU</option>
@@ -98,10 +96,14 @@ const Header = ({ toggleBurgerMenu, isOpen}) => {
         )}
       </div>
       <ScrollToTopButton />
-     { !isOpen &&
-      <button type="button" className={s.menuBtn} onClick={toggleBurgerMenu}>
+
+      <button
+        type="button"
+        className={isOpen ? s.hiddenMenuBtn : s.menuBtn}
+        onClick={toggleBurgerMenu}
+      >
         <img src={burgerMenu} alt="logo burger menu" />
-      </button>}
+      </button>
     </header>
   );
 };
