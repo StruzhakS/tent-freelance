@@ -9,7 +9,8 @@ const PaginatedUniqueOffers = ({
   items,
   Items,
   handleClick,
-  scrollToTop,
+  handleSectionFocus,
+  sectionRef,
 }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const endOffset = itemOffset + itemsPerPage;
@@ -21,7 +22,7 @@ const PaginatedUniqueOffers = ({
   const handlePageClick = event => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
-    scrollToTop();
+    handleSectionFocus();
   };
 
   return (
@@ -31,6 +32,7 @@ const PaginatedUniqueOffers = ({
         t={t}
         isMobileScreen={isMobileScreen}
         handleClick={handleClick}
+        sectionRef={sectionRef}
       />
       <div style={{ position: 'relative' }}>
         <ReactPaginate

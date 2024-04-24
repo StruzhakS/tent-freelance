@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import s from './UniqueOffers.module.css'
 import { uniqueOffers } from 'constants/uniqueOffers'
 import latka from '../../images/Latka.png'
@@ -7,10 +7,9 @@ import { isMobile } from 'constants/useMediaQueries'
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-function Items({ currentItems, t, isMobileScreen, handleClick }) {
-
+function Items({ currentItems, t, isMobileScreen, handleClick, sectionRef }) {
   return (
-    <ul className={s.offersList}>
+    <ul className={s.offersList} ref={sectionRef}>
       {currentItems.map(el => (
         <li key={el.id} className={s.offerItem} onClick={handleClick}>
           <img
@@ -51,7 +50,11 @@ function Items({ currentItems, t, isMobileScreen, handleClick }) {
                 }}
               >
                 <p className={s.offerPrice}>{el.price}грн</p>
-                <NavLink to={'promotions'} type="button" className={s.offerBuyBtn}>
+                <NavLink
+                  to={'promotions'}
+                  type="button"
+                  className={s.offerBuyBtn}
+                >
                   {t('Order')}
                 </NavLink>
               </div>
@@ -90,22 +93,30 @@ const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
 
   const handleClick = () => {
  navigate('/promotions');
-}
+  }
+    const sectionRef = useRef(null);
+
+  const handleSectionFocus = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
 
   return (
-    <section className={s.section}>
+    <section className={s.section} ref={sectionRef}>
       {isMobileScreen ? (
         <Items
           currentItems={visibleOffers}
           t={t}
           isMobileScreen={isMobileScreen}
           handleClick={handleClick}
+          sectionRef={sectionRef}
         />
       ) : (
         <PaginatedUniqueOffers
           itemsPerPage={4}
           items={uniqueOffers}
           Items={Items}
+          handleSectionFocus={handleSectionFocus}
         />
       )}
     </section>

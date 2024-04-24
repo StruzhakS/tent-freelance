@@ -11,39 +11,40 @@ const PaginatedCategories = ({ category }) => {
 
   const renderCards = () => {
     const endIndex = startIndex + cardsPerPage;
-return mobileScreen
-  ? category.map((card, index) => (
-      <div key={index} className={s.categoryCard}>
-        <img
-          className={s.categoryImg}
-          src={images(`./${card.logo}`)}
-          alt="Step Logo"
-        />
-        <h3 className={s.categoryTitle}>{card.title}</h3>
-      </div>
-    ))
-  : category.slice(startIndex, endIndex).map((card, index) => (
-      <div key={index} className={s.categoryCard}>
-        <div style={{width: "100%", display: "flex"}}>
-          <img
-            className={s.categoryImg}
-            src={images(`./${card.logo}`)}
-            alt="Step Logo"
-          />
-        </div>
+    
+    return mobileScreen
+      ? category.map((card, index) => (
+          <div key={index} className={s.categoryCard}>
+            <img
+              className={s.categoryImg}
+              src={images(`./${card.logo}`)}
+              alt="Step Logo"
+            />
+            <h3 className={s.categoryTitle}>{card.title}</h3>
+          </div>
+        ))
+      : category.slice(startIndex, endIndex).map((card, index) => (
+          <div key={index} className={s.categoryCard}>
+            <div style={{ width: '100%', display: 'flex' }}>
+              <img
+                className={s.categoryImg}
+                src={images(`./${card.logo}`)}
+                alt="Step Logo"
+              />
+            </div>
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            height: '95px',
-          }}
-        >
-          <h3 className={s.categoryTitle}>{card.title}</h3>
-        </div>
-      </div>
-    )); 
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                height: '95px',
+              }}
+            >
+              <h3 className={s.categoryTitle}>{card.title}</h3>
+            </div>
+          </div>
+        ));
   };
 
   const goToPrevCard = () => {
@@ -53,8 +54,8 @@ return mobileScreen
   const goToNextCard = () => {
     setStartIndex(prev => prev + 1);
   };
-  return mobileScreen ? ( 
-      <div className={s.paginatedOffers}>{renderCards()}</div>
+  return mobileScreen ? (
+    <div className={s.paginatedOffers}>{renderCards()}</div>
   ) : (
     <div className={s.category}>
       <button

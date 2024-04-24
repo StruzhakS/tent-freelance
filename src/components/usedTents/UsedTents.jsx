@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import s from './UsedTents.module.css';
 import { usedTents } from 'constants/usedTents';
 import usedTent from '../../images/usedTent.png';
@@ -7,10 +7,16 @@ import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUni
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-export function TentsByUser({ currentItems, handleClick, t, isAccessToken }) {
+export function TentsByUser({
+  currentItems,
+  handleClick,
+  t,
+  isAccessToken,
+  sectionRef,
+}) {
   return (
     <>
-      <ul className={s.usedTentList}>
+      <ul className={s.usedTentList} ref={sectionRef}>
         {currentItems.map((el, i) => (
           <li
             className={s.usedTentItem}
@@ -52,6 +58,12 @@ const UsedTents = () => {
     navigate('used-tents');
   };
 
+      const sectionRef = useRef(null);
+
+      const handleSectionFocus = () => {
+        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+              };
+
   return mobileScreen ? (
     <TentsByUser currentItems={visibleOffers} handleClick={handleClick} />
   ) : (
@@ -60,6 +72,8 @@ const UsedTents = () => {
       items={usedTents}
       Items={TentsByUser}
       handleClick={handleClick}
+      sectionRef={sectionRef}
+      handleSectionFocus={handleSectionFocus}
     />
   );
 };

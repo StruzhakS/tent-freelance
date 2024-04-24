@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import s from './Lots.module.css';
 import { useTranslation } from 'react-i18next';
 import SearchTents from 'components/searchTents/SearchTents';
@@ -9,8 +9,9 @@ import UsedTents from 'components/usedTents/UsedTents';
 
 const Lots = () => {
   const { t } = useTranslation();
+
   return (
-    <section className={s.section}>
+    <section className={s.section} >
       <h2 className={s.title}>
         {t('Used tents')}: <br />
         <span className={s.styledTitle}>{t('Lots')}</span>
@@ -22,11 +23,11 @@ const Lots = () => {
           {t('See all')}
         </NavLink>
       </div>
-      <div style={{ position: 'relative', marginBottom: '30px'}}>
+      <div style={{ position: 'relative', marginBottom: '30px' }}>
         <PaginatedCategories category={searchCategory} />
       </div>
 
-       <UsedTents />
+      <UsedTents />
     </section>
   );
 };
