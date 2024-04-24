@@ -1,8 +1,14 @@
-.section {
+/* .section {
   padding: 36px 16px;
 }
 
+.section > *:not(.paginatedOffers) {
+  padding: 0px 0px;
+} */
+
 .title {
+  width: 90%;
+  margin: 0 auto;
   font-size: 30px;
   font-weight: 700;
   line-height: 36.57px;
@@ -20,6 +26,8 @@
 
 .categoryTitle {
   display: flex;
+  width: 90%;
+  margin: 0 auto;
   justify-content: space-between;
   padding-bottom: 20px;
   border-bottom: 2px solid rgba(2, 129, 94, 1);

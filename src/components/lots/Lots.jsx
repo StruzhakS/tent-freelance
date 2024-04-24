@@ -22,7 +22,7 @@ const Lots = () => {
           {t('See all')}
         </NavLink>
       </div>
-      <div style={{ position: 'relative', marginBottom: '30px' }}>
+      <div style={{ position: 'relative', marginBottom: '30px'}}>
         <PaginatedCategories category={searchCategory} />
       </div>
 
