@@ -30,9 +30,6 @@
   justify-content: space-between;
 }
 
-.menuNavigate {
-}
-
 @media screen and (min-width: 768px) {
   .burgerMenu {
     display: none;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import s from './Lots.module.css';
 import { useTranslation } from 'react-i18next';
 import SearchTents from 'components/searchTents/SearchTents';
