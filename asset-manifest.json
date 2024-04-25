@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tent-freelance/static/css/main.e9fd6473.css",
+    "main.css": "/tent-freelance/static/css/main.51c01cd2.css",
     "main.js": "/tent-freelance/static/js/main.45c3bb1b.js",
     "static/media/Latka.png": "/tent-freelance/static/media/Latka.ce3f8809289c47923cd5.png",
     "static/media/hero-image.jpg": "/tent-freelance/static/media/hero-image.d872513b0b5273195deb.jpg",
@@ -32,11 +32,11 @@
     "static/media/arrowLeft.svg": "/tent-freelance/static/media/arrowLeft.d32d301be21caf4e25d7.svg",
     "static/media/arrowRight.svg": "/tent-freelance/static/media/arrowRight.1b785be4da4475c2e7aa.svg",
     "static/media/burger-menu.svg": "/tent-freelance/static/media/burger-menu.8b9ec4e8449d17e2c21fddc5f4832ec2.svg",
-    "main.e9fd6473.css.map": "/tent-freelance/static/css/main.e9fd6473.css.map",
+    "main.51c01cd2.css.map": "/tent-freelance/static/css/main.51c01cd2.css.map",
     "main.45c3bb1b.js.map": "/tent-freelance/static/js/main.45c3bb1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9fd6473.css",
+    "static/css/main.51c01cd2.css",
     "static/js/main.45c3bb1b.js"
   ]
 }
