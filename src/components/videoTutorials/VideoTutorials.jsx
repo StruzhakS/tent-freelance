@@ -5,8 +5,8 @@ import arrowRight from '../../images/moreVideoArrow.png';
 import { isMobile } from 'constants/useMediaQueries';
 import Video from './Video';
 
-const YOU_TUBE_APIKEY = 'AIzaSyC_g6W1DNsfffe3-b8xsbHC7p7uITrEhnQ';
-const CHANEL_ID = 'UCCHbfPlV3EVmlViN-2UTPcg';
+const YOU_TUBE_APIKEY = process.env.REACT_APP_YOU_TUBE_APIKEY;
+const CHANEL_ID = process.env.REACT_APP_CHANNEL_ID;
 
 const VideoTutorials = () => {
   const containerRef = useRef(null);

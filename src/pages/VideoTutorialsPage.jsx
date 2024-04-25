@@ -1,8 +1,8 @@
 import ListOfVideo from 'components/videoTutorials/ListOfVideo';
 import React, { useEffect, useState } from 'react';
 
-const YOU_TUBE_APIKEY = 'AIzaSyC_g6W1DNsfffe3-b8xsbHC7p7uITrEhnQ';
-const CHANEL_ID = 'UCCHbfPlV3EVmlViN-2UTPcg';
+const YOU_TUBE_APIKEY = process.env.REACT_APP_YOU_TUBE_APIKEY;
+const CHANEL_ID = process.env.REACT_APP_CHANNEL_ID;
 
 const VideoTutorialsPage = () => {
   const [videos, setVideos] = useState([]);
