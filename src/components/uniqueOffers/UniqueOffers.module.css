@@ -1,13 +1,13 @@
-.section {
-  padding: 16px 0px;
-}
+/* .section {
+  padding: 16px 0;
+} */
 .offersList {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow-x: scroll;
   gap: 16px;
-  padding: 0px 16px;
+  padding: 16px 16px;
 }
 
 .offerItem {
@@ -15,6 +15,8 @@
   flex-direction: column;
   align-items: center;
   min-width: calc((100% - 32px) / 2.5);
+  border: 2px solid rgba(2, 129, 94, 1);
+  padding: 20px 10px;
 }
 
 .offerImage {
@@ -48,12 +50,29 @@
   color: rgba(255, 52, 0, 1);
 }
 
+.itemDescription {
+  display: -webkit-box;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+  margin-bottom: 10px;
+  overflow: hidden;
+  -webkit-line-clamp: 3; /* Кількість рядків, які будуть відображені */
+  -webkit-box-orient: vertical;
+  line-clamp: 3; /* Кількість рядків, які будуть відображені */
+  box-orient: vertical;
+  max-height: calc(1.5em * 3); /* Висота максимально трьох рядків тексту */
+  text-overflow: ellipsis; /* Відображення "..." для обрізаного тексту */
+}
+
 .offerBuyBtn {
   padding: 4px 8px;
   border-radius: 15px;
   background-color: rgba(2, 129, 94, 1);
   color: white;
-  width: 70%;
+  margin-top: 10px;
+  /* width: 70%; */
   font-size: 13px;
   font-weight: 600;
   line-height: 15.73px;
@@ -95,6 +114,13 @@
     font-weight: 600;
     line-height: 25px;
     text-align: left;
+    margin-bottom: 0px;
+    overflow: visible; /* Повертаємо значення overflow до дефолтного */
+    display: block; /* Повертаємо значення display до дефолтного */
+    -webkit-line-clamp: initial; /* Повертаємо значення -webkit-line-clamp до дефолтного */
+    line-clamp: initial; /* Повертаємо значення line-clamp до дефолтного */
+    max-height: none; /* Повертаємо значення max-height до дефолтного */
+    text-overflow: clip; /* Повертаємо значення text-overflow до дефолтного */
   }
 
   .offerBuyBtn {

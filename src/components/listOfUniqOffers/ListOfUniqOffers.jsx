@@ -7,7 +7,7 @@ import latka from '../../images/Latka.png';
 const ListOfUniqOffers = ({ currentItems, t, isMobileScreen, sectionRef }) => {
   const location = useLocation();
   const isPromotionsPage = location.pathname.includes('/promotions');
-
+console.log(currentItems);
   return (
     <ul className={s.offersList} ref={sectionRef}>
       {currentItems.map(el => (
@@ -20,9 +20,9 @@ const ListOfUniqOffers = ({ currentItems, t, isMobileScreen, sectionRef }) => {
           <div className={s.description}>
             <h3 className={s.offerTitle}>{el.title}</h3>
 
-            {!isMobileScreen && (
+            
               <p className={s.itemDescription}>{el.description}</p>
-            )}
+            
             {isMobileScreen && (
               <p className={s.offerSize}>
                 1 {t('Patch')} - {el.size}
