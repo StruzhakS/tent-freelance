@@ -5,52 +5,33 @@ import arrowRight from '../../images/moreVideoArrow.png';
 import { isMobile } from 'constants/useMediaQueries';
 import Video from './Video';
 
-export const videoIds = [
-  {
-    videoTitle: 'Ремонт тентов с выездом к заказчику',
-    videoId: '0X6fZoFcZ6c',
-  },
-  {
-    videoTitle: 'Ремонт автомобильных грузовых тентов с выездом к заказчику',
-    videoId: '0hGYJOyUJdw',
-  },
-  {
-    videoTitle: 'Ремонт тентов, замена крыши тента на газель',
-    videoId: '8U-sbSv1cbo',
-  },
-  {
-    videoTitle: 'Ремонт тентов грузовых автомобилей',
-    videoId: '11UgzJo4sO4',
-  }
-];
+const YOU_TUBE_APIKEY = 'AIzaSyC_g6W1DNsfffe3-b8xsbHC7p7uITrEhnQ';
+const CHANEL_ID = 'UCCHbfPlV3EVmlViN-2UTPcg';
 
 const VideoTutorials = () => {
-
-   const containerRef = useRef(null);
+  const containerRef = useRef(null);
   const [showScrollBack, setShowScrollBack] = useState(false);
 
-const scrollRight = () => {
-  if (containerRef.current) {
-    containerRef.current.scrollBy({
-      left: 400, // Прокручуємо на ширину картки
-      behavior: 'smooth', // З анімацією
-    });
-    setShowScrollBack(true);
-  }
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: 400, // Прокручуємо на ширину картки
+        behavior: 'smooth', // З анімацією
+      });
+      setShowScrollBack(true);
+    }
   };
-  
+
   const mobileScreen = isMobile();
 
-
-const scrollLeft = () => {
-  if (containerRef.current) {
-    containerRef.current.scrollBy({
-      left: -400, // Прокручуємо назад на ширину картки
-      behavior: 'smooth', // З анімацією
-    });
-  }
-};
-
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: -400, // Прокручуємо назад на ширину картки
+        behavior: 'smooth', // З анімацією
+      });
+    }
+  };
 
   useEffect(() => {
     if (!mobileScreen) {
@@ -80,6 +61,23 @@ const scrollLeft = () => {
     }
   }, [mobileScreen]);
 
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
+        );
+        const data = await response.json();
+        setVideos(data.items);
+      } catch (error) {
+        console.error('Error fetching videos:', error);
+      }
+    };
+
+    fetchVideos();
+  }, []);
 
   return (
     <section className={s.section}>
@@ -94,57 +92,55 @@ const scrollLeft = () => {
         </h2>
       )}
       {mobileScreen && (
-        <NavLink to={'/videotutorials'} className={s.link}>
+        <NavLink to={'/video-tips'} className={s.link}>
           <img src={arrowRight} alt="link to videotutorials" />
         </NavLink>
       )}
 
       {mobileScreen && (
         <ul className={s.videoList}>
-          {videoIds.slice(0, 4).map((el, idx) => (
+          {videos.slice(1).map((el, idx) => (
             <li key={idx} className={s.videoItem}>
-              <Video i={idx} videoId={el.videoId} title={el.videoTitle} />
+              <Video el={el} />
             </li>
           ))}
         </ul>
       )}
 
-      {!mobileScreen && (
-        <div style={{ position: 'relative' }}>
-          <div className={s.container} ref={containerRef}>
-            <div className={s.cards}>
-              {videoIds.slice(0, 4).map((el, idx) => (
-                <Video
-                  key={idx}
-                  i={idx}
-                  videoId={el.videoId}
-                  title={el.videoTitle}
-                />
-              ))}
-            </div>
-            {showScrollBack && (
-              <button className={s.scrollButtonLeft} onClick={scrollLeft}>
-                <img
-                  className={s.arrowLeft}
-                  src={arrowRight}
-                  width={50}
-                  height={40}
-                  alt="arrow to left scroll"
-                />
-              </button>
-            )}
+      {!mobileScreen &&
+        !showScrollBack &&(
+          <div style={{ position: 'relative' }}>
+            <div className={s.container} ref={containerRef}>
+              <div className={s.cards}>
+                {videos.slice(1).map((el, idx) => (
+                  <Video key={idx} el={el} />
+                ))}
+              </div>
+              {videos.length > 3 && (
+                <>
+                  <button className={s.scrollButtonLeft} onClick={scrollLeft}>
+                    <img
+                      className={s.arrowLeft}
+                      src={arrowRight}
+                      width={50}
+                      height={40}
+                      alt="arrow to left scroll"
+                    />
+                  </button>
 
-            <button className={s.scrollButtonRight} onClick={scrollRight}>
-              <img
-                src={arrowRight}
-                width={50}
-                height={40}
-                alt="arrow to right scroll"
-              />
-            </button>
+                  <button className={s.scrollButtonRight} onClick={scrollRight}>
+                    <img
+                      src={arrowRight}
+                      width={50}
+                      height={40}
+                      alt="arrow to right scroll"
+                    />
+                  </button>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </section>
   );
 };

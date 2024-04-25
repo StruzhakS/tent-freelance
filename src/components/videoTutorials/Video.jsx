@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import s from './VideoTutorials.module.css';
 
 
-const Video = ({ videoId, title }) => {
+const Video = ({ el }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -19,9 +19,11 @@ const Video = ({ videoId, title }) => {
          <img
            className={s.imageOfVideo}
            alt="Video Thumbnail"
-           src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+           src={el.snippet.thumbnails.medium.url}
          />
-         <h3 className={s.videoTitle}>{title}</h3>
+         <h3 className={s.videoTitle}>{el.snippet.title}</h3>
+
+         <p className={s.videoDescription}>{el.snippet.localized?.description || el.snippet.description}</p>
        </div>
        {modalOpen && (
          <div
@@ -34,9 +36,9 @@ const Video = ({ videoId, title }) => {
                &times;
              </span>
              <iframe
-               width="100%"
+               width="560"
                height="315"
-               src={`https://www.youtube.com/embed/${videoId}`}
+               src={`https://www.youtube.com/embed/${el.id.videoId}`}
                frameBorder="0"
                allowFullScreen
                title="YouTube Video"
