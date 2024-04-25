@@ -36,7 +36,7 @@
   width: 100%;
   padding-left: 16px;
   max-width: 1200px;
-  height: 145px;
+  /* height: 145px; */
   overflow-x: scroll;
   gap: 18px;
 }
@@ -44,16 +44,17 @@
 .categoryImg {
   display: flex;
   align-items: center;
-  width: 60px;
+  /* width: 100%; */
 }
 
 .categoryCard {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 15px;
   flex-direction: column;
-  width: 400px;
+  width: calc((100% - 80px) / 4.5);
   cursor: pointer;
+  padding: 10px 0px;
 }
 
 .categoryTitle {
