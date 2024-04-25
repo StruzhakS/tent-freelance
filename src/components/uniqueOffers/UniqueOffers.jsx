@@ -10,7 +10,7 @@ const UniqueOffers = () => {
   const { t } = useTranslation()
 const isMobileScreen = isMobile()
   
-const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
+// const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
 
   const sectionRef = useRef(null);
 
@@ -22,13 +22,13 @@ const visibleOffers = isMobileScreen ? uniqueOffers.slice(0, 4) : uniqueOffers
     <section className={s.section} ref={sectionRef}>
       {isMobileScreen ? (
         <ListOfUniqOffers
-        currentItems={visibleOffers}
-        t={t}
-        isMobileScreen={isMobileScreen}
-        sectionRef={sectionRef}
+          currentItems={uniqueOffers}
+          t={t}
+          isMobileScreen={isMobileScreen}
+          sectionRef={sectionRef}
         />
       ) : (
-          <PaginatedUniqueOffers
+        <PaginatedUniqueOffers
           itemsPerPage={4}
           items={uniqueOffers}
           Items={ListOfUniqOffers}

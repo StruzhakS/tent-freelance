@@ -24,7 +24,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'ua',
+  lng: 'ru',
   fallbackLng: 'en',
   debug: true,
   interpolation: {

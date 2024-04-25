@@ -19,7 +19,7 @@ const Header = ({ toggleBurgerMenu, isOpen }) => {
   const { t } = useTranslation();
   const isAccessToken = useSelector(state => !!state.auth.email);
 
-  const [selectedLanguage, setSelectedLanguage] = useState('ua');
+  const [selectedLanguage, setSelectedLanguage] = useState('ru');
 
   const changeLanguage = lng => {
     i18n.changeLanguage(lng);
@@ -97,13 +97,15 @@ const Header = ({ toggleBurgerMenu, isOpen }) => {
       </div>
       <ScrollToTopButton />
 
-      <button
-        type="button"
-        className={isOpen ? s.hiddenMenuBtn : s.menuBtn}
-        onClick={toggleBurgerMenu}
-      >
-        <img src={burgerMenu} alt="logo burger menu" />
-      </button>
+      
+        <button
+          type="button"
+          className={isOpen ? s.hiddenMenuBtn : s.menuBtn}
+          onClick={toggleBurgerMenu}
+        >
+          <img src={burgerMenu} alt="logo burger menu" />
+        </button>
+    
     </header>
   );
 };
