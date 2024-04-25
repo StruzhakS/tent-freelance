@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: calc((100% - 32px) / 2.5);
+  min-width: calc((100% - 16px) / 1.5);
   border: 2px solid rgba(2, 129, 94, 1);
   padding: 20px 10px;
 }
