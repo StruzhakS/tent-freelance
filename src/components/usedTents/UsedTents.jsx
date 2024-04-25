@@ -5,15 +5,15 @@ import usedTent from '../../images/usedTent.png';
 import { isMobile } from 'constants/useMediaQueries';
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 export function TentsByUser({
   currentItems,
   handleClick,
-  t,
   isAccessToken,
   sectionRef,
 }) {
+  const { t } = useTranslation();
   return (
     <>
       <ul className={s.usedTentList} ref={sectionRef}>
@@ -58,11 +58,11 @@ const UsedTents = () => {
     navigate('used-tents');
   };
 
-      const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
-      const handleSectionFocus = () => {
-        sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-              };
+  const handleSectionFocus = () => {
+    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return mobileScreen ? (
     <TentsByUser currentItems={visibleOffers} handleClick={handleClick} />

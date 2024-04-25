@@ -10,10 +10,10 @@ const BurgerMenu = ({ toggleBurgerMenu, isOpen }) => {
   return (
     <div className={`${s.burgerMenu} ${isOpen ? s.open : ''}`} ref={menuRef}>
       <button className={s.burgerIcon} onClick={toggleBurgerMenu}>
-        x
+        &#10006;
       </button>
       <div className={s.menuItems}>
-        <Navigation t={t } />
+        <Navigation t={t} toggleBurgerMenu={toggleBurgerMenu} />
         <LanguagesButtons />
       </div>
     </div>

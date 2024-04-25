@@ -6,7 +6,6 @@ import { useState } from 'react';
 import BurgerMenu from 'components/burgerMenu/BurgerMenu';
 import Footer from 'components/footer/Footer';
 import UsedTents from 'pages/UsedTentsPage';
-import PromotionsPage from 'pages/PromotionsPage';
 import UsedTentsPage from 'pages/UsedTentsPage';
 import VideoTutorialsPage from 'pages/VideoTutorialsPage';
 import ContactsPage from 'pages/ContactsPage';
@@ -15,9 +14,11 @@ import RegistrationPage from 'pages/RegistrationPage';
 import AddAnnouncementPage from 'pages/AddAnnouncementPage';
 import { useSelector } from 'react-redux';
 import { isMobile } from 'constants/useMediaQueries';
+import PromotionPage from 'pages/PromotionsPage';
+import AllPromotions from 'pages/AllPromotions';
 
 function App() {
-const mobileScreen = isMobile()
+  const mobileScreen = isMobile();
 
   const isAccessToken = useSelector(state => !!state.auth.email);
 
@@ -30,12 +31,15 @@ const mobileScreen = isMobile()
   return (
     <>
       <Header toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
-     { mobileScreen &&
-      <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />}
+      {mobileScreen && (
+        <BurgerMenu toggleBurgerMenu={toggleBurgerMenu} isOpen={isOpen} />
+      )}
       <Routes>
         <Route path="/" element={<HomePage isAccessToken={isAccessToken} />} />
         <Route path="/used-tents" element={<UsedTents />} />
-        <Route path="promotions" element={<PromotionsPage />} />
+        <Route path="/promotions" element={<AllPromotions />} />
+        <Route path="promotions/:id" element={<PromotionPage />} />
+
         <Route path="used-tents" element={<UsedTentsPage />} />
         <Route path="video-tips" element={<VideoTutorialsPage />} />
         <Route path="contacts" element={<ContactsPage />} />

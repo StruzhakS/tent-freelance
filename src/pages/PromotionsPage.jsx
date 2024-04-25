@@ -1,10 +1,10 @@
-import Promotions from 'components/promotions/Promotions'
+import Promotion from 'components/promotions/Promotions'
 import React from 'react'
 
-const PromotionsPage = () => {
+const PromotionPage = () => {
   return (
-    <Promotions/>
+    <Promotion/>
   )
 }
 
-export default PromotionsPage
+export default PromotionPage

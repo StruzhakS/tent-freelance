@@ -3,7 +3,7 @@ import s from './Promotions.module.css';
 import latka from '../../images/Latka.png';
 import { useTranslation } from 'react-i18next';
 
-const Promotions = () => {
+const Promotion = () => {
   const { t } = useTranslation();
   const [clientInfo, setUserInfo] = useState({ name: '', phone: '' });
 
@@ -75,4 +75,4 @@ const Promotions = () => {
   );
 };
 
-export default Promotions;
+export default Promotion;
