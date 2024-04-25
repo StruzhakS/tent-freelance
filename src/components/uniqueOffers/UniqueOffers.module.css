@@ -79,6 +79,23 @@
   text-align: center;
 }
 
+@keyframes blink {
+  0%,
+  49% {
+    background: rgba(2, 129, 94, 1);
+    color: #ffffff;
+  } /* Початковий стан і половина тривалості */
+  50%,
+  100% {
+    background-color: #ffffff;
+    color: rgba(2, 129, 94, 1);
+  } /* Кінцевий стан */
+}
+
+.offerBuyBtn {
+  animation: blink 1.5s infinite; /* Запуск анімації "blink" з тривалістю 1.5с, нескінченно повторюється */
+}
+
 .promotionDesktop {
   font-size: 20px;
   font-weight: 400;

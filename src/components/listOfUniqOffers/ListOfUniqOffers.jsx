@@ -20,9 +20,8 @@ console.log(currentItems);
           <div className={s.description}>
             <h3 className={s.offerTitle}>{el.title}</h3>
 
-            
-              <p className={s.itemDescription}>{el.description}</p>
-            
+            <p className={s.itemDescription}>{el.description}</p>
+
             {isMobileScreen && (
               <p className={s.offerSize}>
                 1 {t('Patch')} - {el.size}
@@ -38,6 +37,7 @@ console.log(currentItems);
               >
                 {t('Order')}
               </NavLink>
+             
             </>
           )}
           {!isMobileScreen && (
@@ -66,9 +66,9 @@ console.log(currentItems);
                     <span className={s.firstLetters}>
                       {el.startPromotioin.substring(0, 6)}
                     </span>
-                    {el.startPromotioin.substring(6)} - 
+                    {el.startPromotioin.substring(6)} -
                     <span className={s.firstLetters}>
-                       {el.endPromotion.substring(0, 6)}
+                      {el.endPromotion.substring(0, 6)}
                     </span>
                     {el.endPromotion.substring(6)}
                   </p>
