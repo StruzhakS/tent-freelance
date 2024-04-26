@@ -11,6 +11,8 @@ const CHANEL_ID = process.env.REACT_APP_CHANNEL_ID;
 const VideoTutorials = () => {
   const containerRef = useRef(null);
   const [showScrollBack, setShowScrollBack] = useState(false);
+  const [videos, setVideos] = useState([]);
+  const [error, setError] = useState(null);
 
   const scrollRight = () => {
     if (containerRef.current) {
@@ -34,8 +36,9 @@ const VideoTutorials = () => {
   };
 
   useEffect(() => {
-    if (!mobileScreen) {
+    if (!mobileScreen && containerRef.current) {
       const container = containerRef.current;
+      console.log(container);
       container.addEventListener('mouseenter', () => {
         container.classList.add('hovered');
       });
@@ -61,18 +64,18 @@ const VideoTutorials = () => {
     }
   }, [mobileScreen]);
 
-  const [videos, setVideos] = useState([]);
-
   useEffect(() => {
     const fetchVideos = async () => {
       try {
         const response = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
         );
-        const data = await response.json();
-        setVideos(data.items);
+        const { items, error } = await response.json();
+        // console.log("data", data);
+        setVideos(items);
+        setError(error.message);
       } catch (error) {
-        console.error('Error fetching videos:', error);
+        console.error('Error fetching videos:', error.message);
       }
     };
 
@@ -96,51 +99,54 @@ const VideoTutorials = () => {
           <img src={arrowRight} alt="link to videotutorials" />
         </NavLink>
       )}
+      {videos?.length ? (
+        <>
+          {mobileScreen && (
+            <ul className={s.videoList}>
+              {videos?.slice(1).map((el, idx) => (
+                <li key={idx} className={s.videoItem}>
+                  <Video el={el} />
+                </li>
+              ))}
+            </ul>
+          )}
+          {!mobileScreen && !showScrollBack && (
+            <div style={{ position: 'relative' }}>
+              <div className={s.container}>
+                <div className={s.cards} ref={containerRef}>
+                  {videos?.slice(1).map((el, idx) => (
+                    <Video key={idx} el={el} />
+                  ))}
+                </div>
 
-      {mobileScreen && (
-        <ul className={s.videoList}>
-          {videos.slice(1).map((el, idx) => (
-            <li key={idx} className={s.videoItem}>
-              <Video el={el} />
-            </li>
-          ))}
-        </ul>
-      )}
+                <button className={s.scrollButtonLeft} onClick={scrollLeft}>
+                  <img
+                    className={s.arrowLeft}
+                    src={arrowRight}
+                    width={50}
+                    height={40}
+                    alt="arrow to left scroll"
+                  />
+                </button>
 
-      {!mobileScreen &&
-        !showScrollBack &&(
-          <div style={{ position: 'relative' }}>
-            <div className={s.container} ref={containerRef}>
-              <div className={s.cards}>
-                {videos.slice(1).map((el, idx) => (
-                  <Video key={idx} el={el} />
-                ))}
+                <button className={s.scrollButtonRight} onClick={scrollRight}>
+                  <img
+                    src={arrowRight}
+                    width={50}
+                    height={40}
+                    alt="arrow to right scroll"
+                  />
+                </button>
               </div>
-              {videos.length > 3 && (
-                <>
-                  <button className={s.scrollButtonLeft} onClick={scrollLeft}>
-                    <img
-                      className={s.arrowLeft}
-                      src={arrowRight}
-                      width={50}
-                      height={40}
-                      alt="arrow to left scroll"
-                    />
-                  </button>
-
-                  <button className={s.scrollButtonRight} onClick={scrollRight}>
-                    <img
-                      src={arrowRight}
-                      width={50}
-                      height={40}
-                      alt="arrow to right scroll"
-                    />
-                  </button>
-                </>
-              )}
             </div>
-          </div>
-        )}
+          )}{' '}
+        </>
+      ) : (
+        <div>
+            <h3>Извините, сейчас сервер недостуный</h3>
+            <p>{error && error}</p>
+        </div>
+      )}
     </section>
   );
 };

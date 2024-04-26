@@ -20,10 +20,11 @@ const Video = ({ el }) => {
            className={s.imageOfVideo}
            alt="Video Thumbnail"
            src={el.snippet.thumbnails.medium.url}
+           height={290}
          />
          <h3 className={s.videoTitle}>{el.snippet.title}</h3>
 
-         <p className={s.videoDescription}>{el.snippet.localized?.description || el.snippet.description}</p>
+         <p className={s.videoDescription}>{(el.snippet.localized?.description || el.snippet.description).split('.')[0]}</p>
        </div>
        {modalOpen && (
          <div
