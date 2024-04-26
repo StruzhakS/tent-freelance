@@ -13,7 +13,6 @@ const VideoTutorials = () => {
   const [showScrollBack, setShowScrollBack] = useState(false);
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(null);
-
   const scrollRight = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
@@ -71,7 +70,6 @@ const VideoTutorials = () => {
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
         );
         const { items, error } = await response.json();
-        // console.log("data", data);
         setVideos(items);
         setError(error.message);
       } catch (error) {
@@ -99,6 +97,7 @@ const VideoTutorials = () => {
           <img src={arrowRight} alt="link to videotutorials" />
         </NavLink>
       )}
+
       {videos?.length ? (
         <>
           {mobileScreen && (
@@ -110,24 +109,26 @@ const VideoTutorials = () => {
               ))}
             </ul>
           )}
-          {!mobileScreen && !showScrollBack && (
+          {!mobileScreen && (
             <div style={{ position: 'relative' }}>
-              <div className={s.container}>
-                <div className={s.cards} ref={containerRef}>
+              <div className={s.container} ref={containerRef}>
+                <div className={s.cards}>
                   {videos?.slice(1).map((el, idx) => (
                     <Video key={idx} el={el} />
                   ))}
                 </div>
 
-                <button className={s.scrollButtonLeft} onClick={scrollLeft}>
-                  <img
-                    className={s.arrowLeft}
-                    src={arrowRight}
-                    width={50}
-                    height={40}
-                    alt="arrow to left scroll"
-                  />
-                </button>
+                {showScrollBack && (
+                  <button className={s.scrollButtonLeft} onClick={scrollLeft}>
+                    <img
+                      className={s.arrowLeft}
+                      src={arrowRight}
+                      width={50}
+                      height={40}
+                      alt="arrow to left scroll"
+                    />
+                  </button>
+                )}
 
                 <button className={s.scrollButtonRight} onClick={scrollRight}>
                   <img
@@ -143,8 +144,13 @@ const VideoTutorials = () => {
         </>
       ) : (
         <div>
-            <h3>Извините, сейчас сервер недостуный</h3>
-            <p>{error && error}</p>
+          <h3>
+            Извините, сейчас сервер недостуный, перейдите на наш канал{' '}
+            <a href="https://www.youtube.com/channel/UCCHbfPlV3EVmlViN-2UTPcg">
+              YouTube
+            </a>
+          </h3>
+          <p>{error && error}</p>
         </div>
       )}
     </section>

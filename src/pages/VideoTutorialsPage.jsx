@@ -46,7 +46,7 @@ const VideoTutorialsPage = () => {
     //     ))}
     //   </div>
     // </div>
-    <ListOfVideo videos={videos } />
+    <ListOfVideo videos={videos} />
   );
 };
 
