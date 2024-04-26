@@ -38,7 +38,7 @@
 .videoList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
@@ -49,7 +49,7 @@
   max-width: 320px;
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 .videoItem {
   width: calc(90% / 2);
@@ -107,7 +107,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    /* width: 400px; */
     height: 500px;
     /* border-radius: 30px; */
     overflow: hidden;

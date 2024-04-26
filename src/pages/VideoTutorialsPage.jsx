@@ -5,23 +5,26 @@ const YOU_TUBE_APIKEY = process.env.REACT_APP_YOU_TUBE_APIKEY;
 const CHANEL_ID = process.env.REACT_APP_CHANNEL_ID;
 
 const VideoTutorialsPage = () => {
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState(JSON.parse(localStorage.getItem("videos"))||[]);
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
-        );
-        const data = await response.json();
-        setVideos(data.items);
-      } catch (error) {
-        console.error('Error fetching videos:', error);
-      }
-    };
-
-    fetchVideos();
-  }, []);
+ useEffect(() => {
+   if (!videos.length) {
+     const fetchVideos = async () => {
+       try {
+         const response = await fetch(
+           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
+         );
+         const { items } = await response.json();
+         localStorage.setItem('videos', JSON.stringify(items));
+         //  Локал сторейдж для того, щоб зайвий раз не посилати запит до ютюб
+         setVideos(items);
+       } catch (error) {
+         console.error('Error fetching videos:', error.message);
+       }
+     };
+     fetchVideos();
+   }
+ }, [videos.length]);
 
   return (
     // <div>

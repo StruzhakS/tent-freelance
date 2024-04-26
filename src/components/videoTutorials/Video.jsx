@@ -12,19 +12,45 @@ const Video = ({ el }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
-    
+    console.log(el);
    return (
      <>
        <div className={s.videoItemWrapper} onClick={openModal}>
-         <img
+         {/* <img
            className={s.imageOfVideo}
            alt="Video Thumbnail"
-           src={el.snippet.thumbnails.medium.url}
+           src={el.snippet.thumbnails.high.url}
            height={290}
-         />
+         /> */}
+         <div
+           style={{
+             justifyContent: 'center',
+             display: 'flex',
+             width: '100%',
+             height: '100%',
+             overflow: 'hidden',
+             flexDirection: 'column',
+             alignItems: 'center',
+             borderRadius: '16px',
+             marginBottom: '8px',
+           }}
+         >
+           <img
+             className={s.imageOfVideo}
+             alt="Video Thumbnail"
+             src={el.snippet.thumbnails.high.url}
+            //  height={290}
+           />
+         </div>
          <h3 className={s.videoTitle}>{el.snippet.title}</h3>
 
-         <p className={s.videoDescription}>{(el.snippet.localized?.description || el.snippet.description).split('.')[0]}</p>
+         <p className={s.videoDescription}>
+           {
+             (
+               el.snippet.localized?.description || el.snippet.description
+             ).split('.')[0]
+           }
+         </p>
        </div>
        {modalOpen && (
          <div
