@@ -92,6 +92,7 @@
     padding: 0;
     margin: 0 auto;
     margin-top: 30px;
+    margin-bottom: 52px;
     background-color: inherit;
   }
   .title,
@@ -114,7 +115,7 @@
   .videoItemWrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     /* width: 400px; */
     height: 500px;
@@ -123,14 +124,30 @@
     cursor: pointer;
   }
   .videoList {
+    padding: 20px;
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+
+  .videoTitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-top: 24px;
+    text-align: left;
+  }
+  .videoDescription {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-top: 16px;
+    text-align: left;
   }
 }
 
 .container {
   display: flex;
-  height: 500px;
+  /* height: 500px; */
   overflow-x: hidden;
 }
 

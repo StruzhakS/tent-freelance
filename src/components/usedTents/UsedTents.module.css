@@ -46,13 +46,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  height: 30px;
+  /* padding: 10px 5px; */
+  height: 34px;
   border-radius: 15px;
   background-color: rgba(2, 129, 94, 1);
   color: white;
-  width: calc(60% / 2);
-  font-size: 13px;
+  width: calc(50% / 2);
+  font-size: 11px;
   font-weight: 600;
   line-height: 15.73px;
 

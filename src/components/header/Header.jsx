@@ -79,8 +79,8 @@ const Header = ({ toggleBurgerMenu, isOpen }) => {
                 ? 'Язык'
                 : 'Language'}
             </option>
-            <option value="ua"> UA</option>
             <option value="ru">RU</option>
+            <option value="ua"> UA</option>
             <option value="es"> ES</option>
             <option value="de"> DE </option>
           </select>{' '}

@@ -45,3 +45,13 @@
   text-align: left;
   color: rgba(64, 99, 103, 1);
 }
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 85.33px;
+    letter-spacing: -0.03em;
+    text-align: center;
+  }
+}

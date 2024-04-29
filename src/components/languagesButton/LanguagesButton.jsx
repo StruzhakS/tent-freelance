@@ -7,7 +7,7 @@ import esFlag from '../../images/Spain.png';
 import deFlag from '../../images/Germany.png';
 
 const LanguagesButtons = () => {
-  const [selectedButton, setSelectedButton] = useState(2);
+  const [selectedButton, setSelectedButton] = useState(1);
 
   const handleButtonClick = buttonId => {
     setSelectedButton(buttonId);
