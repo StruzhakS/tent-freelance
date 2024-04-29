@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import s from './UsedTents.module.css';
-import { usedTents } from 'constants/usedTents';
+// import { usedTents } from 'constants/usedTents';
 import usedTent from '../../images/usedTent.png';
 import { isMobile } from 'constants/useMediaQueries';
 import PaginatedUniqueOffers from 'components/paginatedUniqueOffers/PaginatedUniqueOffers';
@@ -49,7 +49,7 @@ export function TentsByUser({
   );
 }
 
-const UsedTents = () => {
+const UsedTents = ({ usedTents }) => {
   const mobileScreen = isMobile();
   const visibleOffers = mobileScreen ? usedTents.slice(0, 6) : usedTents;
   const navigate = useNavigate();

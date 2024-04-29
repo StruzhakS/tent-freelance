@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './SearchTents.module.css';
-import search from '../../images/search.svg';
+import searchLogo from '../../images/search.svg';
 
-const SearchTents = ({ t }) => {
+const SearchTents = ({ t, handleSubmit }) => {
+  const [search, setSearch] = useState('');
+  // const handleChange () => {
+
+  // }
+  console.log(search);
   return (
-    <div className={s.searchContainer}>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        handleSubmit(search);
+      }}
+      className={s.searchContainer}
+    >
       <input
         type="text"
         className={s.searchInput}
         placeholder={t('What you looking for?')}
+        onChange={e => setSearch(e.target.value)}
+        value={search}
       />
       <button type="submit" className={s.searchButton}>
         {t('Search')}
-        <img className={s.searchImage} src={search} alt="search" />
+        <img className={s.searchImage} src={searchLogo} alt="search" />
       </button>
-    </div>
+    </form>
   );
 };
 
