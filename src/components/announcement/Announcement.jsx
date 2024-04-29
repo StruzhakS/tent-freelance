@@ -31,10 +31,10 @@ const Announcement = ({id = 5}) => {
               <p className={s.desciption}>{desciption}</p>
             </div>
             <div className={s.ownerWrapper}>
-              <p className={s.price}>{price}</p>
+              <p className={s.price}>{price} грн</p>
               <p className={s.owner}>{owner}</p>
               <a href="tel:+380501589860" className={s.callBtn}>
-                <img src={logoPhone} alt="" />
+                <img src={logoPhone} alt="logo call" />
                 {t('Call')}
               </a>
               <div>

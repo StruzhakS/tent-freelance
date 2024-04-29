@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux';
 import { isMobile } from 'constants/useMediaQueries';
 import PromotionPage from 'pages/PromotionsPage';
 import AllPromotions from 'pages/AllPromotions';
+import MyAnnouncement from 'components/myAnnouncement/MyAnnouncement';
 
 function App() {
   const mobileScreen = isMobile();
@@ -39,11 +40,12 @@ function App() {
         <Route path="/used-tents" element={<UsedTents />} />
         <Route path="/promotions" element={<AllPromotions />} />
         <Route path="promotions/:id" element={<PromotionPage />} />
-
         <Route path="used-tents" element={<UsedTentsPage />} />
         <Route path="video-tips" element={<VideoTutorialsPage />} />
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="add-announcement" element={<AddAnnouncementPage />} />
+        MyAnnouncement
+        <Route path="my-tents" element={<MyAnnouncement />} />
         <Route path="*" element={<Navigate to={'/'} />} />
         {!isAccessToken && (
           <>

@@ -38,5 +38,9 @@
   "leave": "Вы действительно хотите выйти?",
   "announcement": "Обьявление",
   "Related Ads": "Похожие объявления",
-  "language": "Язык"
+  "language": "Язык",
+  "My announcement": "Мои обьявления",
+  "Edit": "Редактировать",
+  "Delete": "Удалить",
+  "See other announcements": "Смотреть другие объявления"
 }
