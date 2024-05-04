@@ -56,6 +56,11 @@ const UsedTents = ({ usedTents }) => {
 
   const handleClick = e => {
     navigate('used-tents');
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth"
+     });
+    
   };
 
   const sectionRef = useRef(null);

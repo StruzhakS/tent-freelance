@@ -33,6 +33,7 @@ const Announcement = ({id = 5}) => {
             <div className={s.ownerWrapper}>
               <p className={s.price}>{price} грн</p>
               <p className={s.owner}>{owner}</p>
+              <p className={s.tell}>+380501589860</p>
               <a href="tel:+380501589860" className={s.callBtn}>
                 <img src={logoPhone} alt="logo call" />
                 {t('Call')}
@@ -43,8 +44,8 @@ const Announcement = ({id = 5}) => {
               </div>
             </div>
           </div>
-            </div>
-            
+        </div>
+
         <div>
           <h2 className={s.relatedAdsTitle}>{t('Related Ads')}</h2>
           <ul className={css.usedTentList}>
