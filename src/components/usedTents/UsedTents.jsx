@@ -58,7 +58,7 @@ const UsedTents = ({ usedTents }) => {
     navigate('used-tents');
      window.scrollTo({
        top: 0,
-       behavior: "smooth"
+       behavior: "instant"
      });
     
   };

@@ -16,7 +16,8 @@ const Announcement = ({id = 5}) => {
     const navigate = useNavigate()
     
     const handleClick = () => {
-   navigate('/used-tents');
+      navigate('/used-tents');
+      
 }
     return (
       <div className={s.announSection}>
