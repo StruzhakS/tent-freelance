@@ -10,7 +10,9 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Час розміщення оголошення
     first_name = models.CharField(max_length=100)  # Ім'я замовника
     last_name = models.CharField(max_length=100)  # Прізвище замовника
+    phone_number = models.CharField(max_length=15)  # Номер телефону
     description = models.TextField()  # Опис оголошення
 
     def __str__(self):
         return self.title
+
