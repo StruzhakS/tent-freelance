@@ -20,7 +20,7 @@ const Video = ({ el }) => {
       <div className={s.videoItemWrapper} onClick={openModal}>
         <div
           style={{
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             display: 'flex',
             width: '100%',
             height: '100%',

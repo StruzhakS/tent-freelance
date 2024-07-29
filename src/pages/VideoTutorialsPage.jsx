@@ -8,14 +8,14 @@ const VideoTutorialsPage = () => {
   const [videos, setVideos] = useState(JSON.parse(localStorage.getItem("videos"))||[]);
 
  useEffect(() => {
-   if (!videos.length) {
+   if (!videos?.length) {
      const fetchVideos = async () => {
        try {
          const response = await fetch(
            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
          );
          const { items } = await response.json();
-         localStorage.setItem('videos', JSON.stringify(items));
+          items && localStorage.setItem('videos', JSON.stringify(items));
          //  Локал сторейдж для того, щоб зайвий раз не посилати запит до ютюб
          setVideos(items);
        } catch (error) {
@@ -24,7 +24,7 @@ const VideoTutorialsPage = () => {
      };
      fetchVideos();
    }
- }, [videos.length]);
+ }, [videos?.length]);
 
   return (
     // <div>

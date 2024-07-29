@@ -11,7 +11,8 @@ const CHANEL_ID = process.env.REACT_APP_CHANNEL_ID;
 const VideoTutorials = () => {
   const containerRef = useRef(null);
   const [showScrollBack, setShowScrollBack] = useState(false);
-  const [videos, setVideos] = useState(JSON.parse(localStorage.getItem("videos"))||[]);
+  const [videos, setVideos] = useState(JSON.parse(localStorage.getItem('videos')) || []);
+  const [error, setError] = useState(null)
 
   const scrollRight = () => {
     if (containerRef.current) {
@@ -64,24 +65,27 @@ const VideoTutorials = () => {
   }, [mobileScreen]);
 
   useEffect(() => {
-   if (!videos.length) {
-     const fetchVideos = async () => {
-       try {
-         const response = await fetch(
-           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
-         );
-         const { items } = await response.json();
-         localStorage.setItem('videos', JSON.stringify(items));
-        //  Локал сторейдж для того, щоб зайвий раз не посилати запит до ютюб
-         setVideos(items);
-       } catch (error) {
-         console.error('Error fetching videos:', error.message);
-       }
-     };
+    if (!videos?.length) {
+      const fetchVideos = async () => {
+        try {
+          const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANEL_ID}&key=${YOU_TUBE_APIKEY}`
+          );
+          const { items } = await response.json();
+          console.log('items', items);
 
-     fetchVideos();
-   }
-  }, [videos.length]);
+          items && localStorage.setItem('videos', JSON.stringify(items));
+          //  Локал сторейдж для того, щоб зайвий раз не посилати запит до ютюб
+          setVideos(items);
+        } catch (error) {
+          setError(error)
+          console.error('Error fetching videos:', error.message);
+        }
+      };
+      //
+      fetchVideos();
+    }
+  }, [videos?.length]);
 
   return (
     <section className={s.section}>
@@ -100,49 +104,63 @@ const VideoTutorials = () => {
           <img src={arrowRight} alt="link to videotutorials" />
         </NavLink>
       )}
-      <>
-        {mobileScreen && (
-          <ul className={s.videoList}>
-            {videos?.slice(1).map((el, idx) => (
-              <li key={idx} className={s.videoItem}>
-                <Video el={el} />
-              </li>
-            ))}
-          </ul>
-        )}
-        {!mobileScreen && (
-          <div style={{ position: 'relative' }}>
-            <div className={s.container} ref={containerRef}>
-              <div className={s.cards}>
-                {videos?.slice(1).map((el, idx) => (
-                  <Video key={idx} el={el} />
-                ))}
-              </div>
+      {videos?.length ? (
+        <>
+          ({' '}
+          {mobileScreen && (
+            <ul className={s.videoList}>
+              {videos?.slice(0, videos.length - 1).map((el, idx) => (
+                <li key={idx} className={s.videoItem}>
+                  <Video el={el} />
+                </li>
+              ))}
+            </ul>
+          )}
+          {!mobileScreen && (
+            <div style={{ position: 'relative' }}>
+              <div className={s.container} ref={containerRef}>
+                <div className={s.cards}>
+                  {videos?.slice(0, videos.length - 1).map((el, idx) => (
+                    <Video key={idx} el={el} />
+                  ))}
+                </div>
 
-              {showScrollBack && (
-                <button className={s.scrollButtonLeft} onClick={scrollLeft}>
+                {showScrollBack && (
+                  <button className={s.scrollButtonLeft} onClick={scrollLeft}>
+                    <img
+                      className={s.arrowLeft}
+                      src={arrowRight}
+                      width={50}
+                      height={40}
+                      alt="arrow to left scroll"
+                    />
+                  </button>
+                )}
+
+                <button className={s.scrollButtonRight} onClick={scrollRight}>
                   <img
-                    className={s.arrowLeft}
                     src={arrowRight}
                     width={50}
                     height={40}
-                    alt="arrow to left scroll"
+                    alt="arrow to right scroll"
                   />
                 </button>
-              )}
-
-              <button className={s.scrollButtonRight} onClick={scrollRight}>
-                <img
-                  src={arrowRight}
-                  width={50}
-                  height={40}
-                  alt="arrow to right scroll"
-                />
-              </button>
+              </div>
             </div>
-          </div>
-        )}{' '}
-      </>
+          )}
+          )
+        </>
+      ) : (
+        <div>
+          <h3>
+            Извините, сейчас сервер недостуный, перейдите на наш канал{' '}
+            <a href="https://www.youtube.com/channel/UCCHbfPlV3EVmlViN-2UTPcg">
+              YouTube
+            </a>
+          </h3>
+          <p>{error && error}</p>
+        </div>
+      )}
       {/* {videos?.length ? (
         <>
           {mobileScreen && (
